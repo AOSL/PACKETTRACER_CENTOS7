@@ -1,0 +1,3455 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>JavaScript API</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="styleNormal.css">
+	</head>
+	<body>
+	<p class="MainHeading1">JavaScript API</p>
+	<hr>
+	<p>&nbsp;</p>
+	<div>
+	  <table>
+	    <tbody>
+	      <tr>
+	        <td colspan="4"><h3 id="JavaScriptAPI-ProgramStructureandEvents">Program Structure and Events</h3></td>
+          </tr>
+	      <tr>
+	        <td><div>
+	          <div>
+	            <p><strong>Function</strong> </p>
+              </div>
+	          </div></td>
+	        <td colspan="1"><strong>Return Type</strong></td>
+	        <td><div>
+	          <div>
+	            <p><strong>Description</strong> </p>
+              </div>
+	          </div></td>
+	        <td><div>
+	          <div>
+	            <p><strong>Example</strong> </p>
+              </div>
+	          </div></td>
+          </tr>
+	      <tr>
+	        <td><div>
+	          <div>
+	            <p>setup()</p>
+              </div>
+	          </div></td>
+	        <td colspan="1">N/A</td>
+	        <td><div>
+	          <div>
+	            <p>If defined, this function is called once when the program starts.</p>
+              </div>
+	          </div></td>
+	        <td><div>
+	          <div>
+	            <pre>function setup() {<br> pinMode(0, INPUT);<br>} </pre>
+              </div>
+	          </div></td>
+          </tr>
+	      <tr>
+	        <td><div>
+	          <div>
+	            <p>loop()</p>
+              </div>
+	          </div></td>
+	        <td colspan="1">N/A</td>
+	        <td><div>
+	          <div>
+	            <p>If defined, this function is called continuously when the program is running. The frequency of the calls depends on the complexity of this function, the number of other devices running programs and their complexity, and the machine's processing power.</p>
+              </div>
+	          </div></td>
+	        <td><div>
+	          <div>
+	            <pre>function loop() {<br> Serial.println(digitalRead(0));<br>} </pre>
+              </div>
+	          </div></td>
+          </tr>
+	      <tr>
+	        <td colspan="1"><p>cleanUp()</p></td>
+	        <td colspan="1">N/A</td>
+	        <td colspan="1">If defined, this function is called once just before the program stops.</td>
+	        <td colspan="1"><pre>function cleanUp() {<br> Serial.println("program is stopping.");<br>} </pre></td>
+          </tr>
+	      <tr>
+	        <td><div>
+	          <div>
+	            <p>mouseEvent(pressed, x, y)</p>
+              </div>
+	          </div></td>
+	        <td colspan="1">N/A</td>
+	        <td><div>
+	          <div>
+	            <p>If defined, this function is called when the user clicks and/or moves the mouse on the workspace icon of this device.</p>
+	            <ul>
+	              <li>pressed - a boolean indicating whether the left mouse button is pressed down</li>
+	              <li>x - the x coordinate (in pixels) of the mouse relative to the workspace icon's top left corner</li>
+	              <li>y - the y coordinate (in pixels) of the mouse relative to the workspace icon's top left corner</li>
+	              <li>firstPress - a boolean indicating whether the left mouse button is the first time being pressed down after the last call to this function; pressed is true when the mouse button is pressed and moved, but firstPress is true only when the mouse button is first pressed but not when moved.</li>
+                </ul>
+	            <p> </p>
+              </div>
+	          </div></td>
+	        <td><div>
+	          <div>
+	            <pre>function mouseEvent(pressed, x, y, firstPress) {<br> if (firstPress)<br>  doSomething();<br>} </pre>
+              </div>
+	          </div></td>
+          </tr>
+	      <tr>
+	        <td colspan="1">measurementSystemChangeEvent()</td>
+	        <td colspan="1">N/A</td>
+	        <td colspan="1">If defined, this function is called when the user changes the measurement system between Metric and Imperial in Preferences. Use isUsingMetric() to get the current setting.</td>
+	        <td colspan="1"><pre>function measurementSystemChangeEvent() {<br> METRIC = isUsingMetric();<br> unit = METRIC ? "C" : "F";<br> refresh();<br>} </pre></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-DigitalI/O">Digital I/O </h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>pinMode(slot, mode) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Set a digital slot to INPUT or OUTPUT. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>pinMode(1, OUTPUT); </p>
+                  </div>
+	              <div>
+	                <p>pinMode(2, INPUT); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>digitalRead(slot) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Reads from a digital slot, returns HIGH or LOW. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var val = digitalRead(1); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>digitalWrite(slot, value) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Writes to a digital slot with HIGH or LOW. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>digitalWrite(1, HIGH); </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-AnalogI/O">Analog I/O </h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>analogRead(slot) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Reads from an analog slot, returns 0 to 1023. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var val = analogRead(A1); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>analogWrite(slot, value) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Writes a PWM wave to a digital slot, from 0 to 255. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>analogWrite(A1, 128); </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+	    <div>
+	      <div>
+	        <p> </p>
+	        <div>
+	          <table>
+	            <tbody>
+	              <tr>
+	                <td colspan="4"><h3 id="JavaScriptAPI-CustomI/O">Custom I/O </h3></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Function</strong></p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><strong>Return Type</strong></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Description</strong> </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Example</strong> </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>customRead(slot) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">string</td>
+	                <td><div>
+	                  <div>
+	                    <p>Reads from an custom slot, returns a string</p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>var val = customRead(1); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>customWrite(slot, value) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Writes a string to a digital slot. You can use customRead directly from the other side</p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>customWrite(1, "hello"); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+	        <p>  </p>
+	        <p> </p>
+	        <div>
+	          <table>
+	            <tbody>
+	              <tr>
+	                <td colspan="4"><h3 id="JavaScriptAPI-InputInterrupts">Input Interrupts</h3></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Function</strong></p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><strong>Return Type</strong></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Description</strong> </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Example</strong> </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>attachInterrupt(slot, callback)</p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Registers a function to be called when the input of a slot changes.</p>
+	                    <p>This works for analog, digital and custom inputs. Whenever the input changes, the callback is called.</p>
+	                    <p>Only one function is registered per slot. Calling this a second time for the same slot will remove the first callback.</p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <pre>function isr() {<br>  input = analogRead(0);<br>}</pre>
+	                    <pre>attachInterrupt(0, isr); </pre>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>detachInterrupt(slot) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Unregisters the slot for input changes.</p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>detachInterrupt(0);</p>
+	                    <div><br>
+                        </div>
+                      </div>
+	                  </div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+	        <p><br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-Time">Time</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>delay(ms) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Pauses the program for ms. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>delay(1000); </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+	    <div>
+	      <div>
+	        <p> </p>
+	        <div>
+	          <table>
+	            <tbody>
+	              <tr>
+	                <td colspan="4"><h3 id="JavaScriptAPI-DebugOutputs">Debug Outputs </h3></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Function</strong></p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><strong>Return Type</strong></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Description</strong> </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Example</strong> </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>Serial.print(msg) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Prints message to debug outputs.</p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>Serial.print("hello");</p>
+	                    <div><br>
+                        </div>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>Serial.println(msg) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>Prints message with a \n at the end to debug outputs.</p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><div>
+	                  <div>
+	                    <p>Serial.println("hello");</p>
+                      </div>
+	                  </div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+	        <p> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><div>
+	              <h3 id="JavaScriptAPI-BasicNetworking">Basic Networking </h3>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>Network.localIP() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">string</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the local IP. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var ip = Network.localIP(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>Network.subnetMask() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">string</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the subnet mask. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var mask = Network.subnetMask(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>Network.gatewayIP() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">string</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the gateway IP. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var gateway = Network.gatewayIP(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-HTTPClient">HTTP Client</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>new HTTPClient() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">HTTPClient</td>
+	            <td><div>
+	              <div>
+	                <p>Creates a HTTP Client. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var http = new HTTPClient();</p>
+                  </div>
+	              <div>
+	                <p>  </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>open(url) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Gets an URL. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>http.open(&ldquo;<a href="http://www.cisco.com/" rel="nofollow">http://www.cisco.com</a>&rdquo;); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>stop() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Stops the request. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>http.stop(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onDone </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when the request is done. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>http.onDone = function(status, data) { </p>
+                  </div>
+	              <div>
+	                <p>}; </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-HTTPServer(SBConly)">HTTP Server (SBC only)</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>HTTPServer.route(path, method, callback); </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets up a route for path and calls callback when it is requested. Routes also support wildcards using *.</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>HTTPServer.route("/hello", function(url, response) { </p>
+                  </div>
+	              <div>
+	                <p>  response.send("world"); </p>
+                  </div>
+	              <div>
+	                <p>});</p>
+	                <p><br>
+                    </p>
+	                <div>
+	                  <p>HTTPServer.route("/*", function(url, response) { </p>
+                    </div>
+	                <div>
+	                  <p>  response.send("hi"); </p>
+                    </div>
+	                <div>
+	                  <p>});</p>
+                    </div>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>HTTPServer.start(port) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">boolean</td>
+	            <td><div>
+	              <div>
+	                <p>Starts listening on port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>HTTPServer.start(80); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>HTTPServer.stop() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Stops listening.</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>HTTPServer.stop(); </p>
+	                <div><br>
+                    </div>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1"> </td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"> </td>
+              </tr>
+	          <tr>
+	            <td colspan="1"><strong>Response class</strong></td>
+	            <td colspan="1"> </td>
+	            <td colspan="1">Passed into the HTTPServer route handler.</td>
+	            <td colspan="1"> </td>
+              </tr>
+	          <tr>
+	            <td colspan="1">send(content)</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">Sends content back as response.</td>
+	            <td colspan="1">response.send("hello");</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">setContentType(type)</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">Sets the content type in the response.</td>
+	            <td colspan="1">response.setContentType("text/plain");</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">sendFile(filePath)</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">Sends a file back as response. The file path is in the device's file manager, not relative to the source code of the current project/script.</td>
+	            <td colspan="1">response.sendFile("/test.txt")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">sendNotFound()</td>
+	            <td colspan="1">N/A</td>
+	            <td colspan="1">Sends a file not found as response.</td>
+	            <td colspan="1">response.sendNotFound()</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <p>  </p>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-Email">Email</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.setup(email, server, username, password) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets up the email client to be used. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.setup(&ldquo;user@cisco.com&rdquo;, "cisco.com", "username", "password"); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.send(address, subject, body) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sends an email. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.send("pt@cisco.com", "subject", "body); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.receive() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Receives emails. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.receive(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.onSend </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when sending an email is done. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.onSend = function(success) { </p>
+                  </div>
+	              <div>
+	                <p>}; </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.onReceive </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when emails are received. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>EmailClient.onReceive = function(sender, subject, body) { </p>
+                  </div>
+	              <div>
+	                <p>}; </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-TCP">TCP</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>new TCPClient() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">TCPClient</td>
+	            <td><div>
+	              <div>
+	                <p>Creates a TCP Client. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var client = new TCPClient(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>connect(ip, port) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">boolean</td>
+	            <td><div>
+	              <div>
+	                <p>Connects to ip and port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.connect(IPAddress("1.1.1.1"), 2000); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>close() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Disconnects. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.close(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>state() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the state of the connection. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.state(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>remoteIP() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">string</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the remote IP. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.remoteIP(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>remotePort() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the remote port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.remotePort(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>send(data) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sends data to remote. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.send("hello"); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onReceive </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when data is received. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.onReceive = function(data) { </p>
+                  </div>
+	              <div>
+	                <p>}; </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onConnectionChange </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when the connection changes. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>client.onConnectionChange = function(type) { </p>
+                  </div>
+	              <div>
+	                <p>}; </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>  </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"> </td>
+	            <td><div>
+	              <div>
+	                <p>  </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>  </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>new TCPServer() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">TCPServer</td>
+	            <td><div>
+	              <div>
+	                <p>Creates a TCP Server. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var server = TCPServer(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>listen(port) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Starts listening on port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>server.listen(2000); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>stop() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Stops listening. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>server.stop(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onNewClient </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when a new client comes in. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>server.onNewClient = function(client) { </p>
+                  </div>
+	              <div>
+	                <p>}; </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-UDP">UDP</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>new UDPSocket() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">UDPSocket</td>
+	            <td><div>
+	              <div>
+	                <p>Creates an UDP Socket. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var udp = new UDPSocket(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>begin(port) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">boolean</td>
+	            <td><div>
+	              <div>
+	                <p>Starts listening on port. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.begin(2000); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>stop() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Stops listening. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.stop(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>send(ip, port, data) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">boolean</td>
+	            <td><div>
+	              <div>
+	                <p>Sends data. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.send(IPAddress("1.1.1.1"), 2000, "hello"); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>onReceive </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets the callback for when data is received. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>udp.onReceive = function(ip, port, data) { </p>
+                  </div>
+	              <div>
+	                <p>}; </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-File(SBConly)">File (SBC only)</h3></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p><strong>Function</strong></p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Description</strong> </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p><strong>Example</strong> </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.exists(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">boolean</td>
+	            <td><div>
+	              <div>
+	                <p>Returns whether a file exists in the file system. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.exists("/file.txt") </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.open(path,  mode) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">File</td>
+	            <td><div>
+	              <div>
+	                <p>Opens a file for reading or writing. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var file = FileSystem.open("/file.txt", File.READ);  Modes = File.READ | File.WRITE | File.APPEND<br>
+                    </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.remove(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">boolean</td>
+	            <td><div>
+	              <div>
+	                <p>Removes a file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.remove("/file.txt"); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.mkdir(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">boolean</td>
+	            <td><div>
+	              <div>
+	                <p>Creates a directory including all intermediate directories. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.mkdir("/dir1/dir2"); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.rmdir(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">boolean</td>
+	            <td><div>
+	              <div>
+	                <p>Removes a directory. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.rmdir("/dir1/dir2"); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>FileSystem.dir(path) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">Array of File</td>
+	            <td><div>
+	              <div>
+	                <p>Lists all files in a directory. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var files = FileSystem.dir("/dir1"); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>  </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1"> </td>
+	            <td><div>
+	              <div>
+	                <p>  </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>  </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>name() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">string</td>
+	            <td><div>
+	              <div>
+	                <p>Returns name of file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.name(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>dir() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">string</td>
+	            <td><div>
+	              <div>
+	                <p>Returns directory path. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.dir(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>available() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p># of bytes available for reading in file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var bytes = file.available(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>close() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Closes the file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.close(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>position() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the current reading position of the file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var position = file.position(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>seek(position) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">boolean</td>
+	            <td><div>
+	              <div>
+	                <p>Seeks to position in file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.seek(0); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>print(val) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Prints to file, returns the number of bytes written. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.print("Hello"); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>println(val) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Prints to file with a \n at the end, returns the number of bytes written. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.println("Hello"); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>readln() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">string</td>
+	            <td><div>
+	              <div>
+	                <p>Reads a line of string or to the end of file. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var val = file.readln(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>readch() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">string</td>
+	            <td><div>
+	              <div>
+	                <p>Reads one character and removes it from buffer. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var val = file.readch(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>peekch() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">string</td>
+	            <td><div>
+	              <div>
+	                <p>Reads one character without removing from buffer. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var val = file.peekch(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>read() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Reads the first byte and removes from buffer, or -1 if none. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var val = file.read(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>peek() </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Returns the next byte without removing it from buffer, or -1 if none. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>var val = file.peek(); </p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>write(val) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">int</td>
+	            <td><div>
+	              <div>
+	                <p>Writes as binary. </p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>file.write(val); </p>
+                  </div>
+	              </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+      </div>
+    </div>
+	<div>
+	  <p> </p>
+	  <div>
+	    <div>
+	      <p> </p>
+	      <div>
+	        <table>
+	          <tbody>
+	            <tr>
+	              <td colspan="4"><h3 id="JavaScriptAPI-USB">USB</h3></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p><strong>Function</strong></p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><strong>Return Type</strong></td>
+	              <td><div>
+	                <div>
+	                  <p><strong>Description</strong> </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p><strong>Example</strong> </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1">USB0</td>
+	              <td colspan="1">USB</td>
+	              <td colspan="1">The variable for USB0 port.</td>
+	              <td colspan="1">USB0.begin(9600);</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">USB1 (SBC only)</td>
+	              <td colspan="1">USB</td>
+	              <td colspan="1">The variable for USB1 port.</td>
+	              <td colspan="1">USB1.begin(9600);</td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>begin(speed) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">N/A</td>
+	              <td><div>
+	                <div>
+	                  <p>Begin communication. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>USB0.begin(9600); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>end() </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">N/A</td>
+	              <td><div>
+	                <div>
+	                  <p>Ends communication. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>USB0.end(); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>print(val) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">int</td>
+	              <td><div>
+	                <div>
+	                  <p>Prints to USB, returns the number of bytes written. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>USB0.print("Hello"); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>println(val) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">int</td>
+	              <td><div>
+	                <div>
+	                  <p>Prints to USB with a \n at the end, returns the number of bytes written. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>USB0.println("Hello"); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>available() </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">int </td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p># of bytes available for reading in buffer. </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>var bytes = USB0.available();</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>readln() </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">string</td>
+	              <td><div>
+	                <div>
+	                  <p>Reads a line of string or to the end of stream. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var val = USB0.readln(); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>readch() </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">string</td>
+	              <td><div>
+	                <div>
+	                  <p>Reads one character and removes it from buffer. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var val = USB0.readch(); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>peekch() </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">string</td>
+	              <td><div>
+	                <div>
+	                  <p>Reads one character without removing from buffer. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var val = USB0.peekch(); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>read() </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">int</td>
+	              <td><div>
+	                <div>
+	                  <p>Reads the first byte and removes from buffer, or -1 if none. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var val = USB0.read(); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>peek() </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><p>int</p></td>
+	              <td><div>
+	                <div>
+	                  <p>Returns the next byte without removing it from buffer, or -1 if none. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var val = USB0.peek(); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>write(val) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">int</td>
+	              <td><div>
+	                <div>
+	                  <p>Writes as binary. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>USB0.write(val); </p>
+	                  <div><br>
+                      </div>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+	            <tr>
+	              <td colspan="1">PTmata0</td>
+	              <td colspan="1">PTmata</td>
+	              <td colspan="1">The variable for PTmata communication over USB0 port.</td>
+	              <td colspan="1">PTmata0.begin(9600);</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">PTmata1 (SBC only)</td>
+	              <td colspan="1">PTmata</td>
+	              <td colspan="1">The variable for PTmata communication over USB1 port.</td>
+	              <td colspan="1">PTmata1.begin(9600);</td>
+                </tr>
+	            <tr>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>begin(speed) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>Begin communication. </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>PTmata0.begin(9600); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>end() </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>Ends communication. </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>PTmata0.end(); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>pinMode(slot, mode) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>Set a digital slot on other side to INPUT or OUTPUT. </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>PTmata0.pinMode(1, OUTPUT); </p>
+                    </div>
+	                <div>
+	                  <p>PTmata0.pinMode(2, INPUT); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>digitalRead(slot) </p>
+                    </div>
+	                </div></td>
+	              <td>int</td>
+	              <td><div>
+	                <div>
+	                  <p>Reads from a digital slot on other side, returns HIGH or LOW. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var val = PTmata0.digitalRead(1); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>digitalWrite(slot, value) </p>
+                    </div>
+	                </div></td>
+	              <td>N/A</td>
+	              <td><div>
+	                <div>
+	                  <p>Writes to a digital slot on other side with HIGH or LOW. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>PTmata0.digitalWrite(1, HIGH); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>analogRead(slot) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">int</td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>Reads from an analog slot on other side, returns 0 to 1023. </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>var val = PTmata0.analogRead(A1); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>analogWrite(slot, value) </p>
+                    </div>
+	                </div></td>
+	              <td>N/A</td>
+	              <td><div>
+	                <div>
+	                  <p>Writes a PWM wave to a digital slot on other side, from 0 to 255. </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>PTmata0.analogWrite(A1, 128); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>customRead(slot) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">string</td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>Reads from an custom slot&nbsp;on other side, returns a string</p>
+	                </div>
+	                </div></td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>var val = PTmata0.customRead(1); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>customWrite(slot, value) </p>
+                    </div>
+	                </div></td>
+	              <td>N/A</td>
+	              <td><div>
+	                <div>
+	                  <p>Writes a string to a digital slot on other side. You can use customRead directly from the other side</p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>PTmata0.customWrite(1, "hello"); </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>available() </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">int </td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p># of bytes available for reading in buffer. </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><div>
+	                <div>
+	                  <p>var bytes = PTmata0.available();</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1">processInput()</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Reads from buffer and processes inputs for commands and reports of states.</td>
+	              <td colspan="1"><pre>function loop() {<br>  while (PTmata0.available())<br>    PTmata0.processInput();<br>  PTmata0.readAndReportData();<br>}</pre></td>
+                </tr>
+	            <tr>
+	              <td colspan="1">readAndReportData()</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Reads this side's slot values and report to other side if they are changed.</td>
+	              <td colspan="1">PTmata0.readAndReportData();</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+	      <p><br>
+	        <br>
+          </p>
+	      <div>
+	        <div>
+	          <p> </p>
+	          <div>
+	            <table>
+	              <tbody>
+	                <tr>
+	                  <td colspan="4"><h3 id="JavaScriptAPI-IoEClient(SBConly)">IoE Client (SBC only)</h3></td>
+                    </tr>
+	                <tr>
+	                  <td><div>
+	                    <div>
+	                      <p><strong>Function</strong></p>
+                        </div>
+	                    </div></td>
+	                  <td colspan="1"><strong>Return Type</strong></td>
+	                  <td><div>
+	                    <div>
+	                      <p><strong>Description</strong> </p>
+                        </div>
+	                    </div></td>
+	                  <td><div>
+	                    <div>
+	                      <p><strong>Example</strong> </p>
+                        </div>
+	                    </div></td>
+                    </tr>
+	                <tr>
+	                  <td>IoEClient.setup(api)</td>
+	                  <td colspan="1">N/A</td>
+	                  <td><p>Sets up the API for remote monitor and control from IoE server.</p>
+	                    <p>The api is an object with the following properties describing the device:</p>
+	                    <ul>
+	                      <li>type - a string for the type of this device</li>
+	                      <li>states - an Array of objects with the following properties describing the state:
+	                        <ul>
+	                          <li>name - a string for this state</li>
+	                          <li>type - a string for the type of this state; can be "bool", "number", "options", "string"</li>
+	                          <li>options (required if type is "options") - an object that maps values to names</li>
+	                          <li>unit (optional if type is "number") - the default or Metric unit label; the value of a number state sent to the IoE Server should be in this unit</li>
+	                          <li>imperialUnit (optional if type is "number") - the Imperial System unit label</li>
+	                          <li>toImperialConversion (optional if type is "number") - a string to be evaluated to convert the default value to Imperial unit where x is the default value</li>
+	                          <li>toMetricConversion (optional if type is "number") - a string to be evaluated to convert the value in Imperial unit to the default or Metric unit, where x is the Imperial value</li>
+	                          <li>decimalDigits (optional if type is "number") - the number of decimal digits to round to on IoE Server pages; default is to not round</li>
+	                          <li>controllable - a boolean indicating whether it is remotely controllable</li>
+	                          <li>minValue (required if type is "number" and controllable is true) - the minimum value to allow the IoE Server to set in default or Metric unit</li>
+	                          <li>maxValue (required if type is "number" and controllable is true) - the maximum value to allow the IoE Server to set in default or Metric unit</li>
+                            </ul>
+                          </li>
+                        </ul>
+	                    <p>For measurement systems other than Metric and Imperial, use only the "unit" property. That means if you want a device to show more than Metric and Imperial, you need to create another device for other measurement systems.</p></td>
+	                  <td><pre>IoEClient.setup({<br>  type: "Door",<br>  states: [{<br>    name: "Open",<br>    type: "bool"<br>  }, {<br>    name: "Lock",<br>    type: "options",<br>    options: {<br>      "0": "Unlock",<br>      "1": "Lock"<br>    },<br>    controllable: true<br>  }]<br>});</pre>
+	                    <pre>IoEClient.setup({<br> type: "Thermostat",<br> states: [{<br>  name: "Status",<br>  type: "options",<br>  options: {<br>   "0": "Off",<br>   "1": "Cooling",<br>   "2": "Heating",<br>   "3": "Auto"<br>  },<br>  controllable: true<br> }, {<br>  name: "Temperature",<br>  type: "number",<br>  unit: "&amp;deg;C",<br>  imperialUnit: "&amp;deg;F",<br>  toImperialConversion: "x*1.8+32",<br>  toMetricConversion: "(x-32)/1.8",<br>  decimalDigits: 1<br> }, {<br>  name: "Auto Cool Temperature",<br>  type: "number",<br>  unit: "&amp;deg;C",<br>  imperialUnit: "&amp;deg;F",<br>  toImperialConversion: "x*1.8+32",<br>  toMetricConversion: "(x-32)/1.8",<br>  decimalDigits: 1,<br>  controllable: true,<br>  minValue: 10,<br>  maxValue: 100<br> }, {<br>  name: "Auto Heat Temperature",<br>  type: "number",<br>  unit: "&amp;deg;C",<br>  imperialUnit: "&amp;deg;F",<br>  toImperialConversion: "x*1.8+32",<br>  toMetricConversion: "(x-32)/1.8",<br>  decimalDigits: 1,<br>  controllable: true,<br>  minValue: -100,<br>  maxValue: 20<br> }]<br>});</pre></td>
+                    </tr>
+	                <tr>
+	                  <td colspan="1">IoEClient.reportStates(states)</td>
+	                  <td colspan="1">N/A</td>
+	                  <td colspan="1">Reports the states of this device to the IoE server.<br>
+	                    The argument is a string representing all states of this device. Each state is separated by a comma.<br>
+	                    The argument can also be an array representing all states.<br>
+	                    The number of states must match the length of the states property in setup().</td>
+	                  <td colspan="1"><p>IoEClient.reportStates("0,1");</p>
+	                    <p>IoEClient.reportStates([0, 1, "str"]);</p></td>
+                    </tr>
+	                <tr>
+	                  <td colspan="1">IoEClient.onInputReceive</td>
+	                  <td colspan="1">N/A</td>
+	                  <td colspan="1"><p>Sets the callback for processing inputs received from IoE server.<br>
+	                    The argument to the callback is a string containing all states of this device.</p>
+	                    <p>This is called with all states info. onStateSet is called with only the state that was changed.</p></td>
+	                  <td colspan="1"><p>IoEClient.onInputReceive = function(input) {<br>
+	                    };</p></td>
+                    </tr>
+	                <tr>
+	                  <td colspan="1">IoEClient.onStateSet</td>
+	                  <td colspan="1">N/A</td>
+	                  <td colspan="1"><p>Sets the callback for processing inputs received from IoE server.<br>
+	                    The arguments to the callback are state name and state value.</p>
+	                    <p>This is called with only the state that was changed. onInputReceive is called with all states info.</p></td>
+	                  <td colspan="1"><p>IoEClient.onStateSet = function(stateName, value) {<br>
+	                    }; </p></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+	          <p> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+	  <div>
+	    <div>
+	      <p> </p>
+	      <div>
+	        <table>
+	          <tbody>
+	            <tr>
+	              <td colspan="4"><h3 id="JavaScriptAPI-Physical">Physical</h3></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p><strong>Function</strong></p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><strong>Return Type</strong></td>
+	              <td><div>
+	                <div>
+	                  <p><strong>Description</strong> </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p><strong>Example</strong> </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>move(x,y) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">N/A</td>
+	              <td><div>
+	                <div>
+	                  <p>Move thing to position x and y in screen coordinates.</p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>move(200,200);  </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>moveBy(x,y)</p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">N/A</td>
+	              <td><div>
+	                <div>
+	                  <p>Increment position of thing by x and y in screen coordinates.</p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>moveBy(1,0);</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1">moveItemInWorkspace(name, x, y);</td>
+	              <td colspan="1">bool</td>
+	              <td colspan="1">Moves the item defined by name to x and y in screen coordinates in the active workspace. The parameters expect x and y to be ints. Casting may be required.</td>
+	              <td colspan="1">moveItemInWorkspace("building", 300,300);</td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>getX()</p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">float</td>
+	              <td><div>
+	                <div>
+	                  <p>Gets the x position of thing in screen coordinates.</p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var x = getX();</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>getY()</p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">float</td>
+	              <td><div>
+	                <div>
+	                  <p>Gets the y position of thing in screen coordinates.</p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var y = getY();</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getCenterX()</td>
+	              <td colspan="1">float</td>
+	              <td colspan="1">Gets the x position of the center of the thing in screen coordinates</td>
+	              <td colspan="1">var x = getCenterX();</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getCenterY()</td>
+	              <td colspan="1">float</td>
+	              <td colspan="1">Gets the y position of the center of the thing in screen coordinates</td>
+	              <td colspan="1">var y = getCenterY();</td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>devicesAt(x, y, width, height)</p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">Array of string</td>
+	              <td>Gets a list of devices at position x and y with a boundary of width and height.&nbsp;The parameters expect x and y to be ints. Casting may be required.
+	                <div>
+	                  <div>
+	                    <p> </p>
+                      </div>
+                    </div></td>
+	              <td><div>
+	                <div>
+	                  <p>devicesAt(10,10,100,100);</p>
+                    </div>
+	                <div>
+	                  <div><br>
+                      </div>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td colspan="1">devicesIncludingClustersAt(x, y, width, height)</td>
+	              <td colspan="1">Array of string</td>
+	              <td colspan="1">Gets a list of devices at position x and y with a boundary of width and height including clusters.&nbsp;The parameters expect x and y to be ints. Casting may be required.</td>
+	              <td colspan="1">devicesIncludingClustersAt(10, 10, 100, 100);</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getName()</td>
+	              <td colspan="1">string</td>
+	              <td colspan="1">Gets the name of the thing</td>
+	              <td colspan="1">var devName = getName()</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getDeviceProperty(deviceName, property)</td>
+	              <td colspan="1">string</td>
+	              <td colspan="1">Gets the property of a device with the specified property</td>
+	              <td colspan="1">getDeviceProperty("Car", "material")</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setDeviceProperty(deviceName, property, value)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Set property for device</td>
+	              <td colspan="1">setDeviceProperty("Car", "material", "metal")</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setComponentOpacity(componentName, value)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Set the opacity of a component in the thing. The value is from 0 to 1, where 1 is opaque.</td>
+	              <td colspan="1">setComponentOpacity("light", 0.5)</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setComponentRotation(componentName, value)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Sets the component rotation in degrees</td>
+	              <td colspan="1">setComponentRotation("hourHand", 90)</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setRotation(value)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Sets the entire thing rotation in degrees</td>
+	              <td colspan="1">setRotation(180)</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getSerialNumber()</td>
+	              <td colspan="1">string</td>
+	              <td colspan="1">Gets the serial number of the thing</td>
+	              <td colspan="1">var serialNo = getSerialNumber()</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setCustomText(x,y,width,height,text)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Write some text on the Thing viewable on the workspace.</td>
+	              <td colspan="1">setCustomText(0,0,100,100,"Device is On");</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setLogicalBackgroundPath(text)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+	            <tr>
+	              <td colspan="1">fillColor(componentName, red, green, blue)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Fill the component with the specified RGB values. The component original image will have to be transparent for the color to show up.</td>
+	              <td colspan="1">fillColor("led", 0,0,255)</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">addSound(soundID, soundPath)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1"><p>Adds a sound to the device so it can be used.  Sound is referenced by the ID for later use.  PT sound folder is:</p>
+	                <p>"/../Sounds/"</p></td>
+	              <td colspan="1">addSound('sound1', '/../Sounds/buzzLow.wav');</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">playSound(soundID, playLength)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1"><p>Plays a sound that has been added to the device.  soundID references the ID the sound was added with, playLength is how many times the sound should run.  -1 will make the sound loop forever.</p></td>
+	              <td colspan="1">playSound('sound1', 2);</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">stopSound(soundID)</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Stops a sound.  soundID references the ID the sound played.</td>
+	              <td colspan="1">stopSound('sound1');</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">destroySounds()</td>
+	              <td colspan="1">N/A</td>
+	              <td colspan="1">Stops any sounds playing in the devices and removes them.  They can't be played again unless re-added.</td>
+	              <td colspan="1">destroySounds();</td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setParentGraphic(path)</td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setParentGraphic(path)</td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setParentGraphicFromComponent(componentName, index)</td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setLogicalParentGraphicFromComponent(componentName, index)</td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+	            <tr>
+	              <td colspan="1">setPhysicalParentGraphicFromComponent(componentName, index)</td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getAttributeOfDeviceAtSlot(attribute, slot)</td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getAttributeOfDevice(attribute)</td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+	            <tr>
+	              <td colspan="1">getSlotsCount()</td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+	              <td colspan="1"> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+	      <p> </p>
+        </div>
+      </div>
+    </div>
+	<div>
+	  <div>
+	    <p> </p>
+	    <div>
+	      <table>
+	        <tbody>
+	          <tr>
+	            <td colspan="4"><h3 id="JavaScriptAPI-Environment">Environment</h3></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">Function</td>
+	            <td colspan="1"><strong>Return Type</strong></td>
+	            <td colspan="1">Description</td>
+	            <td colspan="1">Example</td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>get(environmentID)</p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">float</td>
+	            <td><div>
+	              <div>
+	                <p>Gets the value of the environment by its ID. You can get the ID by placing your mouse over the environment name in the Environment GUI.</p>
+	                <p>If the environment does not exist, it will return -1.</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>Environment.get("Ambient Temperature")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td><div>
+	              <div>
+	                <p>setGlobalProperty(propertyName, value) </p>
+                  </div>
+	              </div></td>
+	            <td colspan="1">N/A</td>
+	            <td><div>
+	              <div>
+	                <p>Sets a global property with a value. Both are strings.</p>
+                  </div>
+	              </div></td>
+	            <td><div>
+	              <div>
+	                <p>Environment.setGlobalProperty("CLOCK", "12:00:00 pm")</p>
+                  </div>
+	              </div></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getGlobalProperty(propertyName)</td>
+	            <td colspan="1">string</td>
+	            <td colspan="1">Returns the global property value.</td>
+	            <td colspan="1">Environment.getGlobalProperty("CLOCK")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">hasGlobalProperty(propertyName)</td>
+	            <td colspan="1">boolean</td>
+	            <td colspan="1">Returns true if the property name exists, otherwise false.</td>
+	            <td colspan="1">Environment.hasGlobalProperty("CLOCK")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">setContribution(environmentID, rate, limit, bCumulative)</td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"><p>Set the things contribution to an environment based on it's environment ID. You do not need to worry about how much time has passed and you only need to call this function when you need different parameters.</p>
+	              <p>rate: the rate to add or subtract from the total environment value in value/second. Value should be in metric.</p>
+	              <p>limit: the maximum or minimum this thing is allowed to contribute. The limit should be in metric.</p>
+	              <p>bCumulative: add up contributed values over time. For environments like light sources that disappear when off, bCumulative should be set to false.</p></td>
+	            <td colspan="1"><p>// increase the Ambient Temperature at 0.05C/second until 100C.</p>
+	              <p>Environment.setContribution("Ambient Temperature", 0.05, 100, true)</p></td>
+              </tr>
+	          <tr>
+	            <td colspan="1">removeCumulativeContribution(environmentID)</td>
+	            <td colspan="1"> </td>
+	            <td colspan="1">Remove the overall cumulative contribution from the Thing. In most cases, you do not need to do this. Rather, you should set up the container to use transference or other things to remove accumulated contributions.</td>
+	            <td colspan="1">Environment.removeCumulativeContribution("Ambient Temperature")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">setTransferenceMultiplier(environmentID, multiplier)</td>
+	            <td colspan="1"> </td>
+	            <td colspan="1"><p>Increase or decrease the current transference value by multiplier.</p>
+	              <p>For example, if you open the door to the house, you may want to speed up the Ambient Temperature convergence with the outside by increasing the container's transference by the multiplier.</p></td>
+	            <td colspan="1">Environment.setTransferenceMultiplier("Ambient Temperature", 2)</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getTotalContributions(environmentID)</td>
+	            <td colspan="1">float</td>
+	            <td colspan="1">Returns the total value of contributions by all things</td>
+	            <td colspan="1">Environment.getTotalContributions("Wind Speed")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getCumulativeContribution(environmentID)</td>
+	            <td colspan="1"> </td>
+	            <td colspan="1">Returns the cumulativeContribution for just the thing that is calling the function</td>
+	            <td colspan="1">Environment.getCumulativeContribution("Wind Speed")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getMetricValue(environmentID)</td>
+	            <td colspan="1">float</td>
+	            <td colspan="1">Returns the metric value of the environmentID regardless of user preference</td>
+	            <td colspan="1">Environment.getMetricValue("Ambient Temperature")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getValueWithUnit(environmentID)</td>
+	            <td colspan="1">string</td>
+	            <td colspan="1">Returns the value in metric or imperial based on the user preference and also append the unit</td>
+	            <td colspan="1">Environment.getValueWithUnit("Ambient Temperature")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getUnit(environmentID)</td>
+	            <td colspan="1">string</td>
+	            <td colspan="1">Returns the unit for the environmentID. The unit can be metric or imperial based on the user preferences</td>
+	            <td colspan="1">Environment.getUnit("Ambient Temperature")</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getVolume()</td>
+	            <td colspan="1">float</td>
+	            <td colspan="1">Returns the volume size of the container in meters^3 that caller of the function is in</td>
+	            <td colspan="1">Environment.getVolume()</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getTimeInSeconds()</td>
+	            <td colspan="1">int</td>
+	            <td colspan="1">Returns the current time</td>
+	            <td colspan="1">Environment.getTimeInSeconds();</td>
+              </tr>
+	          <tr>
+	            <td colspan="1">getElapsedTime(lastTime)</td>
+	            <td colspan="1">int</td>
+	            <td colspan="1">Returns the time passed since the lastTime value</td>
+	            <td colspan="1"><p>var time = Environment.getTimeInSeconds();</p>
+	              <p>delay(1000);</p>
+	              <p>Environment.getElapsedTime(time);</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    <p> </p>
+	    <p> </p>
+	    <div>
+	      <div>
+	        <p> </p>
+	        <div>
+	          <table>
+	            <tbody>
+	              <tr>
+	                <td colspan="4"><h3 id="JavaScriptAPI-RealHTTP(ExternalNetworkAccess)">Real HTTP (External Network Access)</h3></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Function</strong></p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"><strong>Return Type</strong></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Description</strong> </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p><strong>Example</strong> </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>new RealHTTPClient() </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">RealHTTPClient</td>
+	                <td><div>
+	                  <div>
+	                    <p>Creates a Real HTTP Client. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>var http = new RealHTTPClient();</p>
+                      </div>
+	                  <div>
+	                    <p>  </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>get(url) </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Gets an URL. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>http.get(&ldquo;<a href="http://www.cisco.com/" rel="nofollow">http://www.cisco.com</a>&rdquo;); </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">post(url, data)</td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1">Posts data to an URL.</td>
+	                <td colspan="1">http.post(url, {"num":1, "str":"hello"});</td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">put(url, data)</td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1">Puts data to an URL.</td>
+	                <td colspan="1">http.put(url, {"num":1, "str":"hello"});</td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">deleteResource(url)</td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1">Sends a delete to an URL.</td>
+	                <td colspan="1">http.deleteResource(url);</td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p>onDone </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1">N/A</td>
+	                <td><div>
+	                  <div>
+	                    <p>Sets the callback for when the request is done. </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>http.onDone = function(status, data) { </p>
+                      </div>
+	                  <div>
+	                    <p>}; </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td><div>
+	                  <div>
+	                    <p> </p>
+                      </div>
+	                  </div></td>
+	                <td colspan="1"> </td>
+	                <td><div>
+	                  <div>
+	                    <p>  </p>
+                      </div>
+	                  </div></td>
+	                <td><div>
+	                  <div>
+	                    <p>  </p>
+                      </div>
+	                  </div></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1"><strong>Short-hands without creating a RealHTTPClient</strong></td>
+	                <td colspan="1"> </td>
+	                <td colspan="1"> </td>
+	                <td colspan="1"> </td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">RealHTTPClient.get(url, callback)</td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1">Gets an URL.</td>
+	                <td colspan="1"><p>RealHTTPClient.get("http://www.cisco.com", function(status, data) {<br>
+	                  Serial.println(status + ", " + data);<br>
+	                  }); </p></td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">RealHTTPClient.post(url, data, callback)</td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1">Posts data to an URL.</td>
+	                <td colspan="1">RealHTTPClient.post(url, {"num":1, "str":"hello"}, function(status, data) {<br>
+	                  });</td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">RealHTTPClient.put(url, data, callback)</td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1">Puts data to an URL.</td>
+	                <td colspan="1">RealHTTPClient.put(url, {"num":1, "str":"hello"}, function(status, data) {<br>
+	                  });</td>
+                  </tr>
+	              <tr>
+	                <td colspan="1">RealHTTPClient.deleteResource(url, callback)</td>
+	                <td colspan="1">N/A</td>
+	                <td colspan="1">Sends a delete to an URL.</td>
+	                <td colspan="1">RealHTTPClient.deleteResource(url, function(status, data) {<br>
+	                  });</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+	        <p> </p>
+	        <p> </p>
+	        <div>
+	          <div>
+	            <p> </p>
+	            <div>
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td colspan="4"><h3 id="JavaScriptAPI-RealTCP(ExternalNetworkAccess)">Real TCP (External Network Access)</h3></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p><strong>Function</strong></p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1"><strong>Return Type</strong></td>
+	                    <td><div>
+	                      <div>
+	                        <p><strong>Description</strong> </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p><strong>Example</strong> </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>new RealTCPClient() </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">RealTCPClient</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Creates a Real TCP Client. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>var client = new RealTCPClient(); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>connect(ip, port) </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">boolean</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Connects to ip and port. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>client.connect(IPAddress("1.1.1.1"), 2000); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>close() </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">N/A</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Disconnects. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>client.close(); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">connected()</td>
+	                    <td colspan="1">boolean</td>
+	                    <td colspan="1">Returns whether it is in connected state.</td>
+	                    <td colspan="1">client.connected();</td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>state() </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">int</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Returns the state of the connection. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>client.state(); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>remoteIP() </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">string</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Returns the remote IP. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>client.remoteIP(); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">remoteHost()</td>
+	                    <td colspan="1">string</td>
+	                    <td colspan="1">Returns the name of the server.</td>
+	                    <td colspan="1">client.remoteHost();</td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>remotePort() </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">int</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Returns the remote port. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>client.remotePort(); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">localIP()</td>
+	                    <td colspan="1">string</td>
+	                    <td colspan="1">Returns the local IP.</td>
+	                    <td colspan="1">client.localIP();</td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">localPort()</td>
+	                    <td colspan="1">int</td>
+	                    <td colspan="1">Returns the local port.</td>
+	                    <td colspan="1">client.localPort();</td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>send(data) </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">N/A</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Sends data to remote. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>client.send("hello"); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">error()</td>
+	                    <td colspan="1">int</td>
+	                    <td colspan="1">Returns the last error code.</td>
+	                    <td colspan="1">client.error();</td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">errorString()</td>
+	                    <td colspan="1">string</td>
+	                    <td colspan="1">Returns the last error in string.</td>
+	                    <td colspan="1">client.errorString();</td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>onReceive </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">N/A</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Sets the callback for when data is received. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>client.onReceive = function(data) { </p>
+                          </div>
+	                      <div>
+	                        <p>}; </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>onConnectionChange </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">N/A</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Sets the callback for when the connection changes. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>client.onConnectionChange = function(type) { </p>
+                          </div>
+	                      <div>
+	                        <p>}; </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+	            <p> </p>
+              </div>
+            </div>
+	        <div>
+	          <div>
+	            <p> </p>
+	            <div>
+	              <table>
+	                <tbody>
+	                  <tr>
+	                    <td colspan="4"><h3 id="JavaScriptAPI-RealUDP(ExternalNetworkAccess)">Real UDP (External Network Access)</h3></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p><strong>Function</strong></p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1"><strong>Return Type</strong></td>
+	                    <td><div>
+	                      <div>
+	                        <p><strong>Description</strong> </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p><strong>Example</strong> </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>new RealUDPSocket() </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">RealUDPSocket</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Creates an Real UDP Socket. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>var udp = new RealUDPSocket(); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>begin(port) </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">boolean</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Starts listening on port. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>udp.begin(2000); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>stop() </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">N/A</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Stops listening. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>udp.stop(); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">joinMulticastGroup(ip)</td>
+	                    <td colspan="1">boolean</td>
+	                    <td colspan="1">Joins a multicast group. Must call begin() first.</td>
+	                    <td colspan="1">udp.joinMulticastGroup("224.0.0.1");</td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">leaveMulticastGroup(ip)</td>
+	                    <td colspan="1">boolean</td>
+	                    <td colspan="1">Leaves a multicast group.</td>
+	                    <td colspan="1">udp.leaveMulticastGroup("224.0.0.1");</td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">localIP()</td>
+	                    <td colspan="1">string</td>
+	                    <td colspan="1">Returns the local IP.</td>
+	                    <td colspan="1">udp.localIP();</td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">localPort()</td>
+	                    <td colspan="1">int</td>
+	                    <td colspan="1">Returns the local port.</td>
+	                    <td colspan="1">udp.localPort();</td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>send(ip, port, data) </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">N/A</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Sends data. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>udp.send(IPAddress("1.1.1.1"), 2000, "hello"); </p>
+                          </div>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">error()</td>
+	                    <td colspan="1">int</td>
+	                    <td colspan="1">Returns the last error code.</td>
+	                    <td colspan="1">udp.error();</td>
+                      </tr>
+	                  <tr>
+	                    <td colspan="1">errorString()</td>
+	                    <td colspan="1">string</td>
+	                    <td colspan="1">Returns the last error in string.</td>
+	                    <td colspan="1">udp.errorString();</td>
+                      </tr>
+	                  <tr>
+	                    <td><div>
+	                      <div>
+	                        <p>onReceive </p>
+                          </div>
+	                      </div></td>
+	                    <td colspan="1">N/A</td>
+	                    <td><div>
+	                      <div>
+	                        <p>Sets the callback for when data is received. </p>
+                          </div>
+	                      </div></td>
+	                    <td><div>
+	                      <div>
+	                        <p>udp.onReceive = function(ip, port, data) { </p>
+                          </div>
+	                      <div>
+	                        <p>}; </p>
+	                        <div><br>
+                            </div>
+                          </div>
+	                      </div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+	            <p> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+	    <div>
+	      <p>  </p>
+	      <div>
+	        <table>
+	          <tbody>
+	            <tr>
+	              <td colspan="4"><h3 id="JavaScriptAPI-JSON">JSON</h3></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p><strong>Function</strong></p>
+                    </div>
+	                </div></td>
+	              <td colspan="1"><strong>Return Type</strong></td>
+	              <td><div>
+	                <div>
+	                  <p><strong>Description</strong> </p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p><strong>Example</strong> </p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>JSON.stringify(obj) </p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">string</td>
+	              <td><div>
+	                <div>
+	                  <p>Serialize an object into JSON string.</p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var str = JSON.stringify({"num":1, "s":"str"});</p>
+                    </div>
+	                </div></td>
+                </tr>
+	            <tr>
+	              <td><div>
+	                <div>
+	                  <p>JSON.parse(str)</p>
+                    </div>
+	                </div></td>
+	              <td colspan="1">object</td>
+	              <td><div>
+	                <div>
+	                  <p>Converts a JSON string to an object.</p>
+                    </div>
+	                </div></td>
+	              <td><div>
+	                <div>
+	                  <p>var obj = JSON.parse(str);</p>
+                    </div>
+	                </div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+	<p>&nbsp;</p>	
+    
+    
+</body>
+</html>

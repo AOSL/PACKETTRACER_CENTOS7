@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo Starting Linguist
+
+PTDIR=III
+export LD_LIBRARY_PATH=$PTDIR/lib
+pushd $PTDIR/bin > /dev/null
+./linguist $@ > /dev/null 2>&1
+popd > /dev/null
+

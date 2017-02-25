@@ -1,0 +1,1474 @@
+	<div id="application-bg" class="xwtBackground">
+		<div class="xwtBackgroundContainer xwtBackgroundContainerGradient" title="">
+			<img class="xwtBackgroundImage" src="spacer_100percent.png" title="" alt=""/>
+		</div>
+	</div>
+	<div id="header" class="applicationHeader17">
+		<div class="dijitInline applicationHeaderLeft">
+			<div class="applicationHeaderLogo">
+	        <div id="header_logo" class="applicationLogoImage" border="0" title="Cisco Logo" align="absmiddle"></div>
+	    </div>
+			<div class="applicationHeaderLogoText">
+	        <div class="applicationHeaderAppName">Cisco Systems</div>
+	        <div class="applicationHeaderAppSubTitle">Cisco Application Management</div>
+	    </div>
+		</div>
+		<div class="dijitInline applicationHeaderRight">
+		<div>
+			<div class="applicationHeaderMenu">
+				<div class="applicationHeaderRight">
+					<div class="dijitInline applicationHeaderLinks17">
+						<div class="popup" actionid="admin" id="admin"><span><?=Hello,User=?></span></div>
+						<div class="headerItemLine"></div>
+						<div class="popup" actionid="logout" id="logout"><a target="_self" href="javascript:logout();">Log Out</a></div>
+						<div class="headerItemLine"></div>
+						<div class="popup" actionid="aboutTarget" onclick = "openAboutPage()" style = "cursor:pointer;"id="aboutTarget">About</div>
+					</div>
+					<div class="dijitInline"></div>
+				</div>
+			</div>
+			<div class="applicationHeaderMenuEmpty"></div>
+		</div>
+		<div>
+			<div class="applicationHeaderToolbar"></div>
+			<div class="applicationHeaderToolbarEmpty" style="clear:both;"></div>
+		</div>
+	</div>
+		<span id="xwt_widget_layout_quickview_Panel_0_xwtPopoverCleanupPlaceholder" style="display: none"></span>
+		<div class="applicationHeaderNavigation"></div>
+	</div>
+
+	<!--Jade about page   -->
+	<div style="display: none; position: fixed; top: -29px; left: 357px;"  widgetid="aboutW"  id="aboutW" class="xwtAboutPage">
+		<div class="aboutBackTop">
+    		<div class="closeButton">
+    			<span widgetid="aboutW_closeButton" onclick = "closeAboutWindow()" class="dijit dijitReset dijitInline xwtButtonBorder xwtIconButton dijitButton">
+    				<span class="dijitReset dijitInline xwt-IconButtonNode" >
+    					<span style="-moz-user-select: none;" id="aboutW_closeButton"  tabindex="0" class="dijitReset dijitStretch xwt-IconButtonContents"  role="button" aria-labelledby="aboutW_closeButton_label">
+    						<span alt="" class="dijitReset dijitInline dijitIcon closeAboutPage" ></span><span class="dijitReset xwtIconText" >
+    						</span>
+
+    						<span class="dijitReset dijitInline dijitButtonText" id="aboutW_closeButton_label" >com_close</span>
+    					</span>
+    				</span><input value="" class="dijitOffScreen" tabindex="-1"  type="button"></span>
+    		</div>
+			<div class="productInfo">
+				<div class="productDesc productLogo" >
+					<div class="productInfoItem applicationName">Cisco Application Management
+					</div>
+					<div class="productInfoItem productVersion">
+						<span id="about_version">1.0</span>
+					</div>
+				</div>
+				<div class="licenseInfo" >
+            		<table class="additionalInfoContainer">
+            			<tbody >
+            				<tr>
+            					<td class="keyClass infoKeyClass">Host Name</td>
+            					<td class="valueClass">
+            					<span id="about_hostname">P1020RDB</span>
+            					</td>
+            				</tr>
+            			</tbody>
+            		</table>
+				 </div>
+			</div>
+		</div>
+		<div class="aboutBackBottom">
+			<table class="aboutBackBottomContainer" cellpadding="0" cellspacing="0">
+        		<tbody>
+					<tr>
+						<td class="aboutMiddle">
+							<div style="border: medium none;" class="aboutMiddleInformation"  tabindex="0">
+								<div class="aboutMiddleInformationContainer"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="topCenter" valign="top">
+							<div class="copyright">© 2014 Cisco Systems, Inc. Cisco, Cisco Systems and Cisco logo are registered trademarks of Cisco Systems, Inc. and/or its affiliates in the U.S. and certain other countries.</div>
+							<div class="copyrightLogo"  title="Cisco Logo"></div>
+						</td>
+					</tr>
+					<tr class="bottom">
+						<td class="bottomCenter"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!--Jade about page end -->
+
+	<div id="centerRegion" title="" class="dijitContentPane" region="center" style="background: none repeat scroll 0% 0% transparent; overflow: hidden; border-bottom: 1px solid rgb(255, 255, 255); width: 1904px;">
+		<div style="margin-top: 10px; padding-left: 4px;">
+		<div id="mainTabContainer" style="left: 6px; height: 1200px;" class="dijitTabContainer dijitTabContainerTop dijitContainer dijitLayoutContainer tabStrip-disabled">
+		<div id="mainTabContainer_tablist" class="dijitTabListContainer-top xwtScrollingTabController dijitTabController tabStrip-disabled dijitAlignTop dijitLayoutContainer" style="visibility: visible; left: 0px; top: 0px; position: absolute; width: 1900px; height: 24px;">
+			<div style="-moz-user-select: none; display: none; left: 0px; top: 0px; position: absolute; height: 20px;" id="dijit_layout__ScrollingTabControllerButton_0" tabindex="0" class="dijitTabInnerDiv dijitTabContent dijitButtonContents dijitTab tabStripButton tabStripSlideButtonLeft dijitAlignLeft dijitTabBtnDisabled">
+				<img role="presentation" alt="" src="blank.gif" class="dijitTabStripIcon xwtTabStripSlideButtonLeft">
+				<span title="?" class="dijitButtonText dijitDisplayNone">?</span>
+			</div>
+			<div style="height: 24px; left: 2px; top: 0px; position: absolute; width: 1736px;" class="dijitTabListWrapper dijitTabContainerTopNone dijitAlignClient">
+				<div id="topMenuParent" style="width: 50000px;" class="dijitTabContainerTop-tabs">
+					<div id = "connTabJade" onclick="changeTab(0)" class="dijitTab dijitTabChecked dijitChecked">
+						<div class="dijitTabInnerDiv">
+							<div checked="" aria-selected="true" style="-moz-user-select: none;" title="Applications" aria-disabled="false" id="mainTabContainer_tablist_connTab" tabindex="0" role="tab" class="dijitTabContent">
+								<img class="dijitNoIcon" src="blank.gif" alt="">
+								<span style="-moz-user-select: none;" class="tabLabel">Applications</span>
+							</div>
+						</div>
+					</div>
+					<div id = "sysInfoJade" onclick="changeTab(1)" class="dijitTab">
+						<div class="dijitTabInnerDiv">
+							<div style="-moz-user-select: none;" title="System Info" aria-disabled="false" id="mainTabContainer_tablist_sysTab" tabindex="-1" role="tab" class="dijitTabContent">
+								<img class="dijitNoIcon" src="blank.gif" alt="">
+								<span style="-moz-user-select: none;" class="tabLabel">System Info</span>
+							</div>
+						</div>
+					</div>
+					<div id="middlewareServiceJade" onclick="changeTab(2)" class="dijitTab">
+						<div class="dijitTabInnerDiv">
+							<div style="-moz-user-select: none;" title="Middleware Service" aria-disabled="false" id="mainTabContainer_tablist_midTab" tabindex="-1" role="tab" class="dijitTabContent">
+								<img class="dijitNoIcon" src="blank.gif" alt="">
+								<span style="-moz-user-select: none;" class="tabLabel">Middleware Service</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="-moz-user-select: none; display: none; left: 1738px; top: 0px; position: absolute; height: 20px;" id="dijit_layout__ScrollingTabControllerButton_1" tabindex="0" class="dijitTabInnerDiv dijitTabContent dijitButtonContents dijitTab tabStripButton tabStripSlideButtonRight dijitAlignRight dijitTabBtnDisabled">
+				<img role="presentation" alt="" src="blank.gif" class="dijitTabStripIcon xwtTabStripSlideButtonRight">
+				<span title="?" class="dijitButtonText dijitDisplayNone">?</span>
+			</div>
+			<div style="display: none; -moz-user-select: none; left: 1742px; top: 0px; position: absolute; height: 20px;" id="dijit_layout__ScrollingTabControllerButton_2" tabindex="0" class="dijitTabInnerDiv dijitTabContent dijitButtonContents dijitTab tabStripButton tabStripMenuButton dijitAlignRight">
+				<img role="presentation" alt="" src="blank.gif" class="dijitTabStripIcon xwtTabStripMenuButton">
+				<span title="?" class="dijitButtonText dijitDisplayNone">?</span>
+			</div>
+			<div style="width: 150px; left: 1744px; top: 0px; position: absolute; height: 20px;" id="xwt_widget_layout__ToolbarButton_0" class="tabStripButton xwtDijitTabToolbar pageHeader dijitAlignRight"></div>
+		</div>
+
+		<div style="left: 0px; top: 24px; position: absolute; width: 1900px;" class="dijitTabSpacer dijitTabContainerTop-spacer dijitAlignTop"></div>
+		<div id="tabContainerTopMenuParent" style="left: 0px; top: 24px; position: absolute; width: 1899px; height: 1175px;" aria-labelledby="mainTabContainer_tablist_connTab" class="dijitTabPaneWrapper dijitTabContainerTop-container dijitAlignClient">
+			<div id="connTab" style="left: 0px; top: 0px; width: 1879px; height: 1155px;" role="group" class="dijitContentPane dijitTabPane dijitTabContainerTop-child dijitTabContainerTop-dijitContentPane dijitVisible" tooltip="Applications" href="../../static/localmgmt/connectors.html" title="">
+			<!-- start of connector tab -->
+				<div id="cn_gridContainer" style="height:200px; width:100%;">
+					<div id="cn_containerGrid" class="dojoxGrid" style="height: 200px;" aria-readonly="true" widgetid="cn_containerGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" align="left">
+						<div class="dojoxGridMasterHeader" style="display: block; height: 24px;" role="presentation">
+							<div class="dojoxGridHeader" style="width: 1878px; left: 1px; top: 0px;" role="presentation">
+								<div style="width:9000em" role="presentation">
+									<div role="row">
+										<table style="width: 1878px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+											<tbody>
+												<tr>
+													<th id="cn_containerGridHdr0" class="dojoxGridCell dojoDndItem" tabindex="-1" aria-readonly="true" role="columnheader" idx="0" style="width:15%;" dndtype="gridColumn_cn_containerGrid">
+														<div class="dojoxGridSortNode">Id</div>
+													</th>
+													<th id="cn_containerGridHdr1" class="dojoxGridCell dojoDndItem" tabindex="-1" aria-readonly="true" role="columnheader" idx="1" style="width:15%;" dndtype="gridColumn_cn_containerGrid">
+														<div class="dojoxGridSortNode">Name</div>
+													</th>
+													<th id="cn_containerGridHdr2" class="dojoxGridCell dojoDndItem" tabindex="-1" aria-readonly="true" role="columnheader" idx="2" style="width:10%;" dndtype="gridColumn_cn_containerGrid">
+														<div class="dojoxGridSortNode">Status</div>
+													</th>
+													<th id="cn_containerGridHdr3" class="dojoxGridCell dojoDndItem" tabindex="-1" aria-readonly="true" role="columnheader" idx="3" style="width:20%;" dndtype="gridColumn_cn_containerGrid">
+														<div class="dojoxGridSortNode">Actions</div>
+													</th>
+													<th id="cn_containerGridHdr4" class="dojoxGridCell dojoDndItem" tabindex="-1" aria-readonly="true" role="columnheader" idx="4" style="width:30%;" dndtype="gridColumn_cn_containerGrid">
+														<div class="dojoxGridSortNode">Description</div>
+													</th>
+													<th id="cn_containerGridHdr5" class="dojoxGridCell dojoDndItem" tabindex="-1" aria-readonly="true" role="columnheader" idx="5" style="width:10%;" dndtype="gridColumn_cn_containerGrid">
+														<div class="dojoxGridSortNode">Version</div>
+													</th>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="dojoxGridMasterView dojoxGridFixedRowHeight" role="presentation">
+							<div id="dojox_grid__View_1" class="dojoxGridView" style="width: 1878px; height: 176px; left: 1px; top: 0px;" role="presentation">
+								<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">
+								<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">
+								<div class="dojoxGridScrollbox" style="height: 176px;" role="presentation">
+									<div class="dojoxGridContent" style="height: 125px; width: 1878px;" hidefocus="hidefocus" role="presentation">
+										<div style="position: absolute; left: 0px; top: 0px;" role="presentation"><?=VM-TABle-goes-here=?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dojoxGridMasterMessages" style="display: none;"></div>
+						<span tabindex="0"></span>
+					</div>
+				</div>
+				<span id="cn_addContainerButton" class="dijit dijitReset dijitInline xwtButtonBorder xwtButton xwt-TextButton" onclick="openAddDeployWindow()">
+					<span class="dijitReset dijitInline xwt-TextButtonNode">
+						<span id="cn_deployContainerButton" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="cn_deployContainerButton_label">
+							<span class="dijitReset dijitInline xwt-TextButtonText" id="cn_deployContainerButton_label">Add/Deploy</span>
+						</span>
+					</span>
+					<input value="" class="dijitOffScreen" tabindex="-1" type="button">
+				</span>
+				<span class="dijit dijitReset dijitInline xwtButtonBorder xwtButton xwt-TextButton" onclick="cn_refreshContainerGrid()">
+					<span class="dijitReset dijitInline xwt-TextButtonNode">
+						<span id="cn_refreshContainerGridButton" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="cn_refreshContainerGridButton_label">
+							<span class="dijitReset dijitInline xwt-TextButtonText" id="cn_refreshContainerGridButton_label">Refresh</span>
+						</span>
+					</span>
+					<input value="" class="dijitOffScreen" tabindex="-1" type="button">
+				</span>
+				<!-- end of connector tab	-->
+			</div>
+			<!---------------------------------------------------------------------------------------------------->
+			<div id="sysTab" style="left: 0px; top: 0px; width: 1398px; height: 1155px;" widgetid="sysTab" role="group" class="dijitContentPane dijitTabPane dijitTabContainerTop-child dijitTabContainerTop-dijitContentPane dijitHidden"   tooltip="System Info" href="../../static/localmgmt/sysinfo.html" title="">
+
+				<style type="text/css">
+				.listdisplay {
+				  color: #700070;
+				}
+				.addedtitlep {
+				  margin: 5px;
+				  margin-bottom: 20px;
+				}
+				</style>
+
+				<div style="margin:0px;width:49%; float:left;">
+
+					<div widgetid="xwt_widget_layout_TitlePane_0" id="xwt_widget_layout_TitlePane_0" role="group" title="" class="xwtTitlePane addedtitlep evenLevelTitlePane">
+						<div aria-pressed="true" tabindex="0" role="button" class="xwtTitlePaneTitle dijitOpen">
+							<div class="xwtTitleNodeContainer">
+								<div id="xwt_widget_layout_TitlePane_0_arrowNodeInner" onclick = "collapseExpandArrowPane(0)" title="Collapse" class="dijitInline xwtArrowNodeInner">
+								</div>
+								<div style="-moz-user-select: none;" class="dijitInline xwtTitlePaneTextNode">Host Info
+								</div>
+							</div>
+							<div class="xwtTitlePaneActions">
+							</div>
+							<div style="clear:both;"></div>
+						</div>
+						<div role="presentation" class="xwtTitlePaneContentOuter" wairole="presentation">
+							<div id = "xwt_widget_layout_TitlePane_0_pane_parent_jade" role="presentation" class="dijitReset" wairole="presentation">
+								<div aria-hidden="false" role="region" class="xwtTitlePaneContentInner" wairole="region" tabindex="-1" id="xwt_widget_layout_TitlePane_0_pane">
+
+									<table border="0" width="100%">
+										<tbody>
+										<tr>
+											<td align="right" width="100"><b>Host name:</b></td>
+											<td>&nbsp;</td><td><span class="listdisplay" id="sys_hname"><?=SYSTEM-HOSTNAME-goes-here=?></span></td>
+											<td rowspan="2" align="right" valign="top" width="20%">
+												<span widgetid="refresh" class="dijit dijitReset dijitInline xwtButtonBorder xwtButton xwt-TextButton">
+													<span class="dijitReset dijitInline xwt-TextButtonNode" >
+														<span id="refresh" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" onclick = "refreshStats()" role="button" aria-labelledby="refresh_label">
+															<span class="dijitReset dijitInline dijitIcon dijitNoIcon" ></span>
+															<span class="dijitReset dijitToggleButtonIconChar">?</span>	
+															<span class="dijitReset dijitInline xwt-TextButtonText" id="refresh_label">
+															<img src="refresh.png" style="vertical-align:middle;"> Refresh Stats</span>
+														</span>
+													</span>
+													<input value="" class="dijitOffScreen" tabindex="-1" type="button"></span>
+
+											</td>
+										</tr>
+										<tr>
+											<td align="right"><b>Uptime:</b></td><td>&nbsp;</td><td colspan="2"><span class="listdisplay" id="sys_uptime"><?=SYSTEM-UPTIME-goes-here=?></span></td>
+										</tr>
+										<tr>
+											<td align="right"><b>System time:</b></td><td>&nbsp;</td><td colspan="2"><span class="listdisplay" id="sys_stime"><?=SYSTEM-TIME-goes-here=?></span></td>
+										</tr>
+										<tr>
+											<td align="right"><b>Software ver:</b></td><td>&nbsp;</td><td colspan="2"><span class="listdisplay" id="sys_version">1.0</span></td>
+										</tr>
+										<tr>
+											<td align="right"><b>System ID:</b></td><td>&nbsp;</td><td colspan="2"><span class="listdisplay" id="sys_system_id">FTX1906822J</span></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div widgetid="xwt_widget_layout_TitlePane_1" id="xwt_widget_layout_TitlePane_1" role="group" title="" class="xwtTitlePane addedtitlep evenLevelTitlePane">
+						<div aria-pressed="true" aria-controls="xwt_widget_layout_TitlePane_1_pane" tabindex="0" role="button"  class="xwtTitlePaneTitle dijitOpen" >
+							<div class="xwtTitleNodeContainer">
+								<div id="xwt_widget_layout_TitlePane_1_arrowNodeInner" onclick = "collapseExpandArrowPane(1)" title="Collapse"   class="dijitInline xwtArrowNodeInner">
+									<!--<span class="a11yExpandIcon">?</span><span class="a11yCollapseIcon">?</span>--></div>
+								<div style="-moz-user-select: none;"   class="dijitInline xwtTitlePaneTextNode">CPU &amp; Processes</div>
+							</div>
+							<div class="xwtTitlePaneActions" ></div>
+							<div style="clear:both;"></div>
+						</div>
+						<div role="presentation" class="xwtTitlePaneContentOuter"  wairole="presentation">
+							<div id = "xwt_widget_layout_TitlePane_1_pane_parent_jade" role="presentation" class="dijitReset"  wairole="presentation">
+
+								<div aria-hidden="false" role="region" class="xwtTitlePaneContentInner" wairole="region" tabindex="-1" id="xwt_widget_layout_TitlePane_1_pane">
+
+									<div style="text-align:center;">
+										<span id="cpu_model_name">e500v2</span>
+										@ <span id="cpu_frequency">403.980000MHz</span> MHz,
+										<span id="cpu_number_cores">1</span> Cores;
+										<br>(Family: <span id="cpu_family">P1020 RDB</span>,
+										Model: <span id="cpu_model">fsl,P1020</span>,
+										Stepping: <span id="cpu_stepping">5.1 (pvr 8021 2051)</span>)
+									</div>
+
+									<br>
+									<table border="0" width="100%">
+										<tbody>
+											<tr>
+												<td align="right" width="100px"><b>Utilization:</b></td><td>&nbsp;</td>
+												<td align="right">System: </td><td><span class="listdisplay" id="cpu_util_system">1.4%</span></td>
+												<td align="right">User: </td><td><span class="listdisplay" id="cpu_util_user">2.5%</span></td>
+												<td align="right">I/O Wait: </td><td><span class="listdisplay" id="cpu_iowait">0.1%</span></td>
+												<td align="right">Idle: </td><td><span class="listdisplay" id="cpu_idle">95.1%</span></td>
+											</tr>
+											<tr>
+												<td align="right" width="100px"><b>Load Average:</b></td><td>&nbsp;</td>
+												<td align="right">1 min: </td><td><span class="listdisplay" id="cpu_la_1min">1.30</span></td>
+												<td align="right">5 min: </td><td><span class="listdisplay" id="cpu_la_5min">1.08</span></td>
+												<td align="right">15 min: </td><td><span class="listdisplay" id="cpu_la_15min">1.07</span></td>
+												<td></td><td></td>
+											</tr>
+											<tr>
+												<td align="right" width="100px"><b>Processes:</b></td><td>&nbsp;</td>
+												<td align="right">Total: </td><td><span class="listdisplay" id="processes_total">53</span></td>
+												<td align="right">Stopped: </td><td><span class="listdisplay" id="processes_stopped">0</span></td>
+												<td align="right">Zombie: </td><td><span class="listdisplay" id="processes_zombie">0</span></td>
+												<td colspan="2">
+													<span widgetid="xwt_widget_form_TextButton_0" class="dijit dijitReset dijitInline xwtButtonBorder xwtButton xwt-TextButton">
+														<span class="dijitReset dijitInline xwt-TextButtonNode" >
+															<span id="xwt_widget_form_TextButton_0" onclick = "inspectFunc()" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="xwt_widget_form_TextButton_0_label">
+																<span class="dijitReset dijitInline dijitIcon dijitNoIcon"></span>
+																<span class="dijitReset dijitToggleButtonIconChar">?</span>
+																<span class="dijitReset dijitInline xwt-TextButtonText" id="xwt_widget_form_TextButton_0_label">Inspect</span>
+															</span>
+														</span>
+														<input value="" class="dijitOffScreen" tabindex="-1" type="button">
+													</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div widgetid="xwt_widget_layout_TitlePane_2" id="xwt_widget_layout_TitlePane_2" role="group" title="" class="xwtTitlePane addedtitlep evenLevelTitlePane">
+						<div aria-pressed="true" aria-controls="xwt_widget_layout_TitlePane_2_pane" tabindex="0" role="button"  class="xwtTitlePaneTitle dijitOpen" >
+							<div class="xwtTitleNodeContainer">
+								<div id="xwt_widget_layout_TitlePane_2_arrowNodeInner" onclick = "collapseExpandArrowPane(2)" title="Collapse"   class="dijitInline xwtArrowNodeInner">
+									<!--<span class="a11yExpandIcon">?</span><span class="a11yCollapseIcon">?</span> --></div>
+								<div style="-moz-user-select: none;" class="dijitInline xwtTitlePaneTextNode">Memory</div>
+							</div>
+							<div class="xwtTitlePaneActions"></div>
+							<div style="clear:both;"></div>
+						</div>
+						<div role="presentation" class="xwtTitlePaneContentOuter"  wairole="presentation">
+							<div id = "xwt_widget_layout_TitlePane_2_pane_parent_jade" role="presentation" class="dijitReset"  wairole="presentation">
+
+								<div aria-hidden="false" role="region" class="xwtTitlePaneContentInner" wairole="region" tabindex="-1" id="xwt_widget_layout_TitlePane_2_pane">
+
+									<table border="0" width="100%">
+										<tbody>
+										<tr>
+											<td>&nbsp;</td><td>&nbsp;</td><td>Size</td><td>Used</td><td>Free</td>
+										</tr>
+										<tr>
+											<td align="right" width="100px"><b>RAM:</b></td><td>&nbsp;</td>
+											<td><span class="listdisplay" id="mem_size">498.4 MiB</span></td>
+											<td><span class="listdisplay" id="mem_used">213.2 MiB</span></td>
+											<td><span class="listdisplay" id="mem_free">285.2 MiB</span></td>
+										</tr>
+										<tr>
+											<td align="right" width="100px"><b>SWAP:</b></td><td>&nbsp;</td>
+											<td><span class="listdisplay" id="mem_swap">0</span></td>
+											<td><span class="listdisplay" id="mem_swap_used">0</span></td>
+											<td><span class="listdisplay" id="mem_swap_free"></span></td>
+										</tr>
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div widgetid="xwt_widget_layout_TitlePane_3" id="xwt_widget_layout_TitlePane_3" role="group" title="" class="xwtTitlePane addedtitlep evenLevelTitlePane">
+						<div aria-pressed="true" aria-controls="xwt_widget_layout_TitlePane_3_pane" tabindex="0" role="button"  class="xwtTitlePaneTitle dijitOpen" >
+							<div class="xwtTitleNodeContainer">
+								<div id="xwt_widget_layout_TitlePane_3_arrowNodeInner" onclick = "collapseExpandArrowPane(3)" title="Collapse" class="dijitInline xwtArrowNodeInner">
+								<!--<span class="a11yExpandIcon">?</span><span class="a11yCollapseIcon">?</span>--></div>
+								<div style="-moz-user-select: none;" class="dijitInline xwtTitlePaneTextNode">Storage</div>
+							</div>
+							<div class="xwtTitlePaneActions" ></div>
+							<div style="clear:both;"></div>
+						</div>
+						<div role="presentation" class="xwtTitlePaneContentOuter"  wairole="presentation">
+							<div id = "xwt_widget_layout_TitlePane_3_pane_parent_jade" role="presentation" class="dijitReset"  wairole="presentation">
+								<div aria-hidden="false" role="region" class="xwtTitlePaneContentInner"  wairole="region" tabindex="-1" id="xwt_widget_layout_TitlePane_3_pane">
+
+									<div id="storageGridDiv">
+										<div style="height: auto; -moz-user-select: none;" aria-readonly="true" widgetid="grid_41079612" id="grid_41079612" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" align="left">
+											<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" role="presentation">
+												<div style="width: 658px; left: 1px; top: 0px;" class="dojoxGridHeader" role="presentation">
+													<div style="width:9000em" role="presentation">
+														<div role="row">
+														<table style="width: 658px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+															<tbody>
+																<tr>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_41079612Hdr0" class="dojoxGridCell dojoDndItem " idx="0" style="width:auto;" dndtype="gridColumn_grid_41079612">
+																		<div class="dojoxGridSortNode">Device</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_41079612Hdr1" class="dojoxGridCell dojoDndItem " idx="1" style="width:auto;" dndtype="gridColumn_grid_41079612">
+																		<div class="dojoxGridSortNode">Mount point</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_41079612Hdr2" class="dojoxGridCell dojoDndItem " idx="2" style="width:auto;" dndtype="gridColumn_grid_41079612">
+																		<div class="dojoxGridSortNode">Size</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_41079612Hdr3" class="dojoxGridCell dojoDndItem " idx="3" style="width:auto;" dndtype="gridColumn_grid_41079612">
+																			<div class="dojoxGridSortNode">Filesystem</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_41079612Hdr4" class="dojoxGridCell dojoDndItem " idx="4" style="width:auto;" dndtype="gridColumn_grid_41079612">
+																		<div class="dojoxGridSortNode">Space Used</div>
+																	</th>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+												</div>
+											</div>
+											<div style="height: 44px;" class="dojoxGridMasterView" role="presentation">
+												<div style="width: 658px; left: 1px; top: 0px;" widgetid="dojox_grid__View_9" id="dojox_grid__View_9" class="dojoxGridView" role="presentation">
+
+													<!--<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">
+													<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">  -->
+													<div class="dojoxGridScrollbox" role="presentation">
+														<div style="height: 44px; width: 658px;" class="dojoxGridContent" hidefocus="hidefocus" role="presentation">
+															<div style="position: absolute; left: 0px; top: 0px;" role="presentation">
+																<div style="" aria-selected="false" role="row" class="dojoxGridRow">
+																	<table style="width: 658px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+																		<tbody>
+																		<tr>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:auto;">/dev/root</td>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:auto;">/</td>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:auto;">116.1 MiB</td>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:auto;">ext2</td>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:auto;">88 %</td>
+																		</tr>
+																		</tbody>
+																	</table>
+																</div>
+																<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd">
+																	<table style="width: 658px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+																		<tbody>
+																		<tr>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:auto;">20.20.20.1:flash:/</td>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:auto;">/flash</td>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:auto;">978.1 MiB</td>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:auto;">nfs</td>
+																			<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:auto;">28 %</td>
+																		</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="dojoxGridMasterMessages" style="display: none;"></div>
+											<span  tabindex="0"></span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div style="margin:0px;width:49%; float:right;">
+
+					<div widgetid="xwt_widget_layout_TitlePane_4" id="xwt_widget_layout_TitlePane_4" role="group" title="" class="xwtTitlePane addedtitlep evenLevelTitlePane">
+						<div aria-pressed="true" aria-controls="xwt_widget_layout_TitlePane_4_pane" tabindex="0" role="button" class="xwtTitlePaneTitle dijitOpen" >
+							<div class="xwtTitleNodeContainer">
+								<div id="xwt_widget_layout_TitlePane_4_arrowNodeInner" onclick = "collapseExpandArrowPane(4)" title="Collapse" class="dijitInline xwtArrowNodeInner">
+								<!--<span class="a11yExpandIcon">?</span><span class="a11yCollapseIcon">?</span>--></div>
+								<div style="-moz-user-select: none;"  class="dijitInline xwtTitlePaneTextNode">IP v4 Routing</div>
+							</div>
+							<div class="xwtTitlePaneActions"></div>
+							<div style="clear:both;"></div>
+						</div>
+						<div role="presentation" class="xwtTitlePaneContentOuter" wairole="presentation">
+							<div id = "xwt_widget_layout_TitlePane_4_pane_parent_jade" role="presentation" class="dijitReset" wairole="presentation">
+								<div aria-hidden="false" role="region" class="xwtTitlePaneContentInner" wairole="region" tabindex="-1" id="xwt_widget_layout_TitlePane_4_pane">
+
+									<div id="ipGridDiv">
+										<div style="height: auto; -moz-user-select: none;" aria-readonly="true" widgetid="grid_1009030" id="grid_1009030" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" align="left">
+											<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" role="presentation"><div style="width: 658px; left: 1px; top: 0px;" class="dojoxGridHeader" role="presentation">
+												<div style="width:9000em" role="presentation">
+													<div role="row">
+														<table style="width: 658px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+															<tbody>
+																<tr>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_1009030Hdr0" class="dojoxGridCell dojoDndItem " idx="0" style="width:auto;" dndtype="gridColumn_grid_1009030">
+																		<div class="dojoxGridSortNode">Dest</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_1009030Hdr1" class="dojoxGridCell dojoDndItem " idx="1" style="width:auto;" dndtype="gridColumn_grid_1009030">
+																		<div class="dojoxGridSortNode">G/W</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_1009030Hdr2" class="dojoxGridCell dojoDndItem " idx="2" style="width:auto;" dndtype="gridColumn_grid_1009030">
+																		<div class="dojoxGridSortNode">Mask</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_1009030Hdr3" class="dojoxGridCell dojoDndItem " idx="3" style="width:auto;" dndtype="gridColumn_grid_1009030">
+																		<div class="dojoxGridSortNode">Flags</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_1009030Hdr4" class="dojoxGridCell dojoDndItem" idx="4" style="width:auto;" dndtype="gridColumn_grid_1009030">
+																		<div class="dojoxGridSortNode">Metric</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_1009030Hdr5" class="dojoxGridCell dojoDndItem " idx="5" style="width:auto;" dndtype="gridColumn_grid_1009030">
+																		<div class="dojoxGridSortNode">Int</div>
+																	</th>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div></div>
+											<div style="height: 88px;" class="dojoxGridMasterView" role="presentation">
+												<div style="width: 658px; left: 1px; top: 0px;" widgetid="dojox_grid__View_7" id="dojox_grid__View_7" class="dojoxGridView" role="presentation">
+												<div class="dojoxGridScrollbox" role="presentation">
+													<div style="height: 88px; width: 658px;" class="dojoxGridContent" hidefocus="hidefocus" role="presentation">
+														<div style="position: absolute; left: 0px; top: 0px;" role="presentation">
+															<?=RoutingTable-goes-here=?>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+											<div class="dojoxGridMasterMessages" style="display: none;" ></div>
+											<span tabindex="0"></span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div widgetid="xwt_widget_layout_TitlePane_5" id="xwt_widget_layout_TitlePane_5" role="group" title="" class="xwtTitlePane addedtitlep evenLevelTitlePane">
+						<div aria-pressed="true" aria-controls="xwt_widget_layout_TitlePane_5_pane" tabindex="0" role="button" class="xwtTitlePaneTitle dijitOpen" >
+							<div class="xwtTitleNodeContainer">
+								<div id="xwt_widget_layout_TitlePane_5_arrowNodeInner" onclick = "collapseExpandArrowPane(5)" title="Collapse" class="dijitInline xwtArrowNodeInner">
+								<!--<span class="a11yExpandIcon">?</span><span class="a11yCollapseIcon">?</span>--> </div>
+								<div style="-moz-user-select: none;" class="dijitInline xwtTitlePaneTextNode">DNS and NTP Settings</div>
+							</div>
+							<div class="xwtTitlePaneActions" ></div>
+							<div style="clear:both;"></div>
+						</div>
+						<div role="presentation" class="xwtTitlePaneContentOuter" wairole="presentation">
+							<div id = "xwt_widget_layout_TitlePane_5_pane_parent_jade"role="presentation" class="dijitReset" wairole="presentation">
+								<div aria-hidden="false" role="region" class="xwtTitlePaneContentInner" wairole="region" tabindex="-1" id="xwt_widget_layout_TitlePane_5_pane">
+
+									<table border="0" width="100%">
+										<tbody>
+										<tr>
+											<td width="30%">Domain: <span class="listdisplay" id="dns_domain">Not Set</span></td>
+											<td width="30%">Name Servers: <span class="listdisplay" id="dns_nameservers"></span></td>
+											<td width="40%">NTP Servers: <span class="listdisplay" id="ntp_servers"></span></td>
+										</tr>
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div widgetid="xwt_widget_layout_TitlePane_6" id="xwt_widget_layout_TitlePane_6" role="group" title="" class="xwtTitlePane addedtitlep evenLevelTitlePane">
+						<div aria-pressed="true" aria-controls="xwt_widget_layout_TitlePane_6_pane" tabindex="0" role="button" class="xwtTitlePaneTitle dijitOpen" >
+							<div class="xwtTitleNodeContainer">
+								<div id="xwt_widget_layout_TitlePane_6_arrowNodeInner" onclick = "collapseExpandArrowPane(6)"title="Collapse" class="dijitInline xwtArrowNodeInner">
+								<!--<span class="a11yExpandIcon">?</span><span class="a11yCollapseIcon">?</span> --> </div>
+								<div style="-moz-user-select: none;" class="dijitInline xwtTitlePaneTextNode">Logs</div>
+							</div>
+							<div class="xwtTitlePaneActions"></div>
+							<div style="clear:both;"></div>
+						</div>
+						<div role="presentation" class="xwtTitlePaneContentOuter"  wairole="presentation">
+							<div id = "xwt_widget_layout_TitlePane_6_pane_parent_jade"role="presentation" class="dijitReset" wairole="presentation">
+								<div aria-hidden="false" role="region" class="xwtTitlePaneContentInner" wairole="region" tabindex="-1" id="xwt_widget_layout_TitlePane_6_pane">
+									<span widgetid="xwt_widget_form_TextButton_1" class="dijit dijitReset dijitInline xwtButtonBorder1 xwtButton xwt-TextButton">
+										<span class="dijitReset dijitInline xwt-TextButtonNode" >
+											<span id="xwt_widget_form_TextButton_1" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="xwt_widget_form_TextButton_1_label">
+												<span class="dijitReset dijitInline dijitIcon dijitNoIcon"></span>
+												<span class="dijitReset dijitToggleButtonIconChar">?</span>
+												<span class="dijitReset dijitInline xwt-TextButtonText" id="xwt_widget_form_TextButton_1_label">Logging Management</span>
+											</span>
+										</span>
+										<input value="" class="dijitOffScreen" tabindex="-1" type="button">
+									</span>
+									<!--<button type="button" class="loggingManagementbutton">Logging Management</button>-->
+
+									<br><br>
+									<div id="logsGridDiv">
+										<div style="height: auto; -moz-user-select: none;" aria-readonly="true" widgetid="grid_29066263" id="grid_29066263" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" align="left">
+											<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" role="presentation">
+												<div style="width: 658px; left: 1px; top: 0px;" class="dojoxGridHeader" role="presentation">
+													<div style="width:9000em" role="presentation">
+														<div role="row">
+															<table style="width: 658px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+																<tbody>
+																<tr>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_29066263Hdr0" class="dojoxGridCell dojoDndItem " idx="0" style="width:auto;" dndtype="gridColumn_grid_29066263">
+																		<div class="dojoxGridSortNode">Log name</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_29066263Hdr1" class="dojoxGridCell dojoDndItem" idx="1" style="width:auto;" dndtype="gridColumn_grid_29066263">
+																		<div class="dojoxGridSortNode">Timestamp</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_29066263Hdr2" class="dojoxGridCell dojoDndItem " idx="2" style="width:auto;" dndtype="gridColumn_grid_29066263">
+																		<div class="dojoxGridSortNode">Log Size</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_29066263Hdr3" class="dojoxGridCell dojoDndItem " idx="3" style="width:auto;" dndtype="gridColumn_grid_29066263">
+																		<div class="dojoxGridSortNode">View</div>
+																	</th>
+																</tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div style="height: 198px;" class="dojoxGridMasterView" role="presentation">
+												<div style="width: 658px; left: 1px; top: 0px;" widgetid="dojox_grid__View_3" id="Div1" class="dojoxGridView" role="presentation">
+													<div class="dojoxGridScrollbox" role="presentation">
+														<div style="height: 198px; width: 658px;" class="dojoxGridContent" hidefocus="hidefocus" role="presentation">
+															<div style="position: absolute; left: 0px; top: 0px;" role="presentation"><?=randLOgFilesGOHERe=?>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="dojoxGridMasterMessages" style="display: none;"></div>
+											<span tabindex="0"></span>
+										</div>
+									</div>
+									<br>
+							<label style=""><b><font color="#455a73">Syslog Server Configuration </font></b></label>
+							<br><br>
+							<div id="syslogServerGridDiv">
+								<div style="height: auto; -moz-user-select: none;" aria-readonly="true" widgetid="grid_42805479" id="grid_42805479" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" align="left">
+								<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" role="presentation">
+								<div style="width: 658px; left: 1px; top: 0px;" class="dojoxGridHeader" role="presentation">
+									<div style="width:9000em" role="presentation">
+										<div role="row">
+											<table style="width: 658px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+												<tbody>
+												<tr>
+													<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_42805479Hdr0" class="dojoxGridCell dojoDndItem " idx="0" style="width:auto;" dndtype="gridColumn_grid_42805479">
+														<div class="dojoxGridSortNode">Hostname or IP address</div>
+													</th>
+													<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_42805479Hdr1" class="dojoxGridCell dojoDndItem " idx="1" style="width:auto;" dndtype="gridColumn_grid_42805479">
+														<div class="dojoxGridSortNode">Port</div>
+													</th>
+													<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_42805479Hdr2" class="dojoxGridCell dojoDndItem " idx="2" style="width:auto;" dndtype="gridColumn_grid_42805479">
+														<div class="dojoxGridSortNode">Protocol</div>
+													</th>
+													<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_42805479Hdr3" class="dojoxGridCell dojoDndItem " idx="3" style="width:auto;" dndtype="gridColumn_grid_42805479">
+														<div class="dojoxGridSortNode">Level</div>
+													</th>
+													<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_42805479Hdr4" class="dojoxGridCell dojoDndItem " idx="4" style="width:auto;" dndtype="gridColumn_grid_42805479">
+														<div class="dojoxGridSortNode">Actions</div>
+													</th>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div></div>
+								<div style="height: 1px;" class="dojoxGridMasterView" role="presentation"><div style="width: 658px; left: 1px; top: 0px;" widgetid="dojox_grid__View_1" id="Div2" class="dojoxGridView" role="presentation">
+
+								<!--<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">
+								<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">   -->
+								<div class="dojoxGridScrollbox" role="presentation">
+									<div style="height: 1px; width: 658px;" class="dojoxGridContent" hidefocus="hidefocus" role="presentation"></div>
+								</div>
+							</div></div>
+								<div class="dojoxGridMasterMessages" style="display: none;"></div>
+								<span tabindex="0"></span>
+							</div></div>
+							<span widgetid="si_syslogserveradd" class="dijit dijitReset dijitInline xwtButtonBorder1 xwtButton xwt-TextButton">
+							<span class="dijitReset dijitInline xwt-TextButtonNode" >
+							<span aria-disabled="false" id="si_syslogserveradd" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="si_syslogserveradd_label"><span class="dijitReset dijitInline dijitIcon dijitNoIcon" ></span>
+							<span class="dijitReset dijitToggleButtonIconChar">?</span>
+							<span class="dijitReset dijitInline xwt-TextButtonText" id="si_syslogserveradd_label">Add</span>
+							<!--<button type="button" class="addbutton">Add</button>-->
+
+							</span>
+							</span>
+							<input value="" class="dijitOffScreen" tabindex="-1" type="button">
+							</span>
+							</div>
+							</div>
+						</div>
+					</div>
+
+					<div widgetid="xwt_widget_layout_TitlePane_7" id="xwt_widget_layout_TitlePane_7" role="group" title="" class="xwtTitlePane addedtitlep evenLevelTitlePane">
+						<div aria-pressed="true" aria-controls="xwt_widget_layout_TitlePane_7_pane" tabindex="0" role="button" class="xwtTitlePaneTitle dijitOpen">
+							<div class="xwtTitleNodeContainer">
+								<div id="xwt_widget_layout_TitlePane_7_arrowNodeInner" onclick = "collapseExpandArrowPane(7)" title="Collapse" class="dijitInline xwtArrowNodeInner">
+									<!--<span class="a11yExpandIcon">?</span><span class="a11yCollapseIcon">?</span>---></div>
+								<div style="-moz-user-select: none;" class="dijitInline xwtTitlePaneTextNode">TechSupport Information</div>
+							</div>
+							<div class="xwtTitlePaneActions"></div>
+							<div style="clear:both;"></div>
+						</div>
+						<div role="presentation" class="xwtTitlePaneContentOuter" wairole="presentation">
+							<div id = "xwt_widget_layout_TitlePane_7_pane_parent_jade" role="presentation" class="dijitReset" wairole="presentation">
+								<div aria-hidden="false" role="region" class="xwtTitlePaneContentInner" wairole="region" tabindex="-1" id="xwt_widget_layout_TitlePane_7_pane">
+									<div id="techsuppGridDiv">
+										<div style="height: auto; -moz-user-select: none;" aria-readonly="true" widgetid="grid_15903496" id="grid_15903496" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" align="left">
+											<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" role="presentation">
+												<div style="width: 658px; left: 1px; top: 0px;" class="dojoxGridHeader" role="presentation">
+													<div style="width:9000em" role="presentation">
+													<div role="row">
+														<table style="width: 658px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+															<tbody><tr>
+																<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_15903496Hdr0" class="dojoxGridCell dojoDndItem " idx="0" style="width:64%;" dndtype="gridColumn_grid_15903496">
+																	<div class="dojoxGridSortNode">Tech Support snapshot file name</div>
+																</th>
+																<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_15903496Hdr1" class="dojoxGridCell dojoDndItem " idx="1" style="width:12%;" dndtype="gridColumn_grid_15903496">
+																	<div class="dojoxGridSortNode">File Size</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_15903496Hdr2" class="dojoxGridCell dojoDndItem " idx="2" style="width:12%;" dndtype="gridColumn_grid_15903496">
+																	<div class="dojoxGridSortNode">Download</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_15903496Hdr3" class="dojoxGridCell dojoDndItem " idx="3" style="width:12%;" dndtype="gridColumn_grid_15903496">
+																	<div class="dojoxGridSortNode">Delete</div>
+																</th>
+															</tr></tbody>
+														</table>
+													</div>
+												</div>
+												</div>
+											</div>
+											<div style="height: 1px;" class="dojoxGridMasterView" role="presentation">
+												<div style="width: 658px; left: 1px; top: 0px;" widgetid="dojox_grid__View_11" id="dojox_grid__View_11" class="dojoxGridView" role="presentation">
+
+													<!--<input class="dojoxGridHiddenFocus" dojoattachpoint="hiddenFocusNode" role="presentation" type="checkbox">
+													<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">  -->
+													<div class="dojoxGridScrollbox" role="presentation">
+														<div style="height: 1px; width: 658px;" class="dojoxGridContent" hidefocus="hidefocus" role="presentation"></div>
+													</div>
+												</div>
+											</div>
+											<div class="dojoxGridMasterMessages" style="display: none;"></div>
+											<span tabindex="0"></span>
+										</div>
+									</div>
+									<span widgetid="si_newts" class="dijit dijitReset dijitInline xwtButtonBorder1 xwtButton xwt-TextButton">
+										<span class="dijitReset dijitInline xwt-TextButtonNode" >
+											<span id="si_newts" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="si_newts_label">
+												<span class="dijitReset dijitInline dijitIcon dijitNoIcon" ></span>
+												<span class="dijitReset dijitToggleButtonIconChar">?</span>
+												<span class="dijitReset dijitInline xwt-TextButtonText" id="si_newts_label" >Generate snapshot file</span>
+												<!--<button type="button" class="generatesnapshotbutton">Generate snapshot file</button>-->
+
+											</span>
+										</span>
+										<input value="" class="dijitOffScreen" tabindex="-1" type="button">
+									</span>
+									<span widgetid="si_reftts" class="dijit dijitReset dijitInline xwtButtonBorder1 xwtButton xwt-TextButton">
+										<span class="dijitReset dijitInline xwt-TextButtonNode">
+											<span id="si_reftts" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="si_reftts_label">
+												<span class="dijitReset dijitInline dijitIcon dijitNoIcon" ></span>
+												<span class="dijitReset dijitToggleButtonIconChar">?</span>
+												<span class="dijitReset dijitInline xwt-TextButtonText" id="si_reftts_label"><img src="refresh.png" style="vertical-align:middle;"> Refresh List</span>
+												<!--<button type="button" class="refreshlistbutton">Refresh List</button>   -->
+
+											</span>
+										</span>
+										<input value="" class="dijitOffScreen" tabindex="-1" type="button">
+									</span>
+									<br><br>
+									<div id="corefilesGridDiv">
+										<div style="height: auto; -moz-user-select: none;" aria-readonly="true" widgetid="grid_91347493" id="grid_91347493" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" align="left">
+											<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" role="presentation">
+												<div style="width: 658px; left: 1px; top: 0px;" class="dojoxGridHeader" role="presentation">
+													<div style="width:9000em" role="presentation">
+														<div role="row">
+															<table style="width: 658px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+																<tbody><tr>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_91347493Hdr0" class="dojoxGridCell dojoDndItem " idx="0" style="width:64%;" dndtype="gridColumn_grid_91347493">
+																		<div class="dojoxGridSortNode">Core file name</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_91347493Hdr1" class="dojoxGridCell dojoDndItem " idx="1" style="width:12%;" dndtype="gridColumn_grid_91347493">
+																		<div class="dojoxGridSortNode">File Size</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_91347493Hdr2" class="dojoxGridCell dojoDndItem " idx="2" style="width:12%;" dndtype="gridColumn_grid_91347493">
+																		<div class="dojoxGridSortNode">Download</div>
+																	</th>
+																	<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_91347493Hdr3" class="dojoxGridCell dojoDndItem " idx="3" style="width:12%;" dndtype="gridColumn_grid_91347493">
+																		<div class="dojoxGridSortNode">Delete</div>
+																	</th>
+																</tr></tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div style="height: 1px;" class="dojoxGridMasterView" role="presentation">
+												<div style="width: 658px; left: 1px; top: 0px;" widgetid="dojox_grid__View_13" id="dojox_grid__View_13" class="dojoxGridView" role="presentation">
+
+													<!--<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">
+													<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox"> -->
+													<div class="dojoxGridScrollbox" role="presentation">
+														<div style="height: 1px; width: 658px;" class="dojoxGridContent" hidefocus="hidefocus" role="presentation"></div>
+													</div>
+												</div>
+											</div>
+											<div class="dojoxGridMasterMessages" style="display: none;"></div>
+											<span tabindex="0"></span>
+										</div>
+									</div>
+									<span widgetid="si_reftcores" class="dijit dijitReset dijitInline xwtButtonBorder1 xwtButton xwt-TextButton">
+										<span class="dijitReset dijitInline xwt-TextButtonNode">
+											<span id="si_reftcores" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="si_reftcores_label">
+												<span class="dijitReset dijitInline dijitIcon dijitNoIcon" ></span>
+												<span class="dijitReset dijitToggleButtonIconChar">?</span>
+												<span class="dijitReset dijitInline xwt-TextButtonText" id="si_reftcores_label"><img src="refresh.png" style="vertical-align:middle;"> Refresh List</span>
+												<!--<button type="button" class="refreshlistbutton">Refresh List</button>-->
+											</span>
+										</span>
+										<input value="" class="dijitOffScreen" tabindex="-1" type="button">
+									</span>
+									</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div style="clear:both;"></div>
+				<div widgetid="xwt_widget_layout_TitlePane_8" id="xwt_widget_layout_TitlePane_8" role="group" title="" class="xwtTitlePane addedtitlep evenLevelTitlePane">
+					<div aria-pressed="true" aria-controls="xwt_widget_layout_TitlePane_8_pane" tabindex="0" role="button" class="xwtTitlePaneTitle dijitOpen">
+						<div class="xwtTitleNodeContainer">
+							<div id="xwt_widget_layout_TitlePane_8_arrowNodeInner" onclick = "collapseExpandArrowPane(8)" title="Collapse" class="dijitInline xwtArrowNodeInner">
+								<!--<span class="a11yExpandIcon">?</span><span class="a11yCollapseIcon">?</span>	-->
+							</div>
+							<div style="-moz-user-select: none;" class="dijitInline xwtTitlePaneTextNode">Interfaces</div>
+						</div>
+						<div class="xwtTitlePaneActions"></div>
+						<div style="clear:both;"></div>
+					</div>
+					<div role="presentation" class="xwtTitlePaneContentOuter" wairole="presentation">
+						<div id = "xwt_widget_layout_TitlePane_8_pane_parent_jade" role="presentation" class="dijitReset" wairole="presentation">
+							<div aria-hidden="false" role="region" class="xwtTitlePaneContentInner" wairole="region" tabindex="-1" id="xwt_widget_layout_TitlePane_8_pane">
+
+								<div id="ifGridDiv">
+									<div style="height: auto; -moz-user-select: none;" aria-readonly="true" widgetid="grid_39384158" id="grid_39384158" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" align="left">
+										<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" role="presentation">
+											<div style="width: 1371px; left: 1px; top: 0px;" class="dojoxGridHeader" role="presentation">
+												<div style="width:9000em" role="presentation">
+												<div role="row">
+													<table style="width: 1371px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+														<tbody><tr>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr0" class="dojoxGridCell dojoDndItem " idx="0" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">Int</div>
+															</th>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr1" class="dojoxGridCell dojoDndItem " idx="1" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">Type</div>
+															</th>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr2" class="dojoxGridCell dojoDndItem " idx="2" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">Speed</div>
+															</th>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr3" class="dojoxGridCell dojoDndItem " idx="3" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">MTU</div>
+															</th>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr4" class="dojoxGridCell dojoDndItem " idx="4" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">IPv4 Addres</div>
+															</th>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr5" class="dojoxGridCell dojoDndItem " idx="5" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">IPv4 Netmask</div>
+															</th>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr6" class="dojoxGridCell dojoDndItem " idx="6" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">Packets Tx</div>
+															</th>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr7" class="dojoxGridCell dojoDndItem " idx="7" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">Packets Rx</div>
+															</th>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr8" class="dojoxGridCell dojoDndItem " idx="8" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">Dropped Tx/Rx</div>
+															</th>
+															<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_39384158Hdr9" class="dojoxGridCell dojoDndItem " idx="9" style="width:auto;" dndtype="gridColumn_grid_39384158">
+																<div class="dojoxGridSortNode">Tx Queue</div>
+															</th>
+														</tr></tbody>
+													</table>
+												</div>
+											</div>
+											</div>
+										</div>
+										<div style="height: 88px;" class="dojoxGridMasterView" role="presentation">
+											<div style="width: 1371px; left: 1px; top: 0px;" widgetid="dojox_grid__View_5" id="dojox_grid__View_5" class="dojoxGridView" role="presentation">
+											<div class="dojoxGridScrollbox" role="presentation">
+												<div style="height: 88px; width: 1371px;" class="dojoxGridContent" hidefocus="hidefocus" role="presentation">
+													<div style="position: absolute; left: 0px; top: 0px;" role="presentation"><?=IntInfo-goes-here=?>
+													</div>
+												</div>
+											</div>
+											</div>
+										</div>
+										<div class="dojoxGridMasterMessages" style="display: none;"></div>
+										<span tabindex="0"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+			</div>
+
+
+
+			<!---------------------------------------------------------------------------------------------------->
+			<!---
+			<div id="midTab" class="dijitContentPane dijitTabPane dijitTabContainerTop-child dijitTabContainerTop-dijitContentPane dijitHidden" tooltip="Middleware Service" href="../../static/localmgmt/middleware.html" title=""></div>
+			--->
+			<!------------------->
+			<div id="midTab" style="left: 0px; top: 0px; width: 1398px; height: 1155px;" widgetid="midTab" role="group" class="dijitContentPane dijitTabPane dijitTabContainerTop-child dijitTabContainerTop-dijitContentPane dijitHidden" tooltip="Middleware Service" href="../../static/localmgmt/middleware.html" title="">
+
+
+
+				<div id="md_gridContainer" style="height:100px; width:100%;">
+					<div style="height: 100px; -moz-user-select: none;" aria-readonly="true" widgetid="md_containerGrid" id="md_containerGrid" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" align="left">
+						<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" role="presentation">
+							<div style="width: 1397px; left: 1px; top: 0px;" class="dojoxGridHeader" role="presentation">
+								<div style="width:9000em" role="presentation">
+									<div role="row">
+									<table style="width: 1397px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+									<tbody>
+									<tr>
+										<th tabindex="-1" aria-readonly="true" role="columnheader" id="md_containerGridHdr0" class="dojoxGridCell dojoDndItem" idx="0" style="width:15%;" dndtype="gridColumn_md_containerGrid">
+										<div class="dojoxGridSortNode">Name</div>
+										</th>
+											<th tabindex="-1" aria-readonly="true" role="columnheader" id="md_containerGridHdr1" class="dojoxGridCell dojoDndItem" idx="1" style="width:10%;" dndtype="gridColumn_md_containerGrid">
+												<div class="dojoxGridSortNode">Status</div>
+											</th>
+											<th tabindex="-1" aria-readonly="true" role="columnheader" id="md_containerGridHdr2" class="dojoxGridCell dojoDndItem" idx="2" style="width:20%;" dndtype="gridColumn_md_containerGrid">
+												<div class="dojoxGridSortNode">Actions</div>
+											</th>
+											<th tabindex="-1" aria-readonly="true" role="columnheader" id="md_containerGridHdr3" class="dojoxGridCell dojoDndItem" idx="3" style="width:30%;" dndtype="gridColumn_md_containerGrid">
+												<div class="dojoxGridSortNode">Description</div>
+											</th>
+											<th tabindex="-1" aria-readonly="true" role="columnheader" id="md_containerGridHdr4" class="dojoxGridCell dojoDndItem " idx="4" style="width:10%;" dndtype="gridColumn_md_containerGrid">
+												<div class="dojoxGridSortNode">Version</div>
+											</th>
+											<th tabindex="-1" aria-readonly="true" role="columnheader" id="md_containerGridHdr5" class="dojoxGridCell dojoDndItem " idx="5" style="width:15%;" dndtype="gridColumn_md_containerGrid">
+												<div class="dojoxGridSortNode">Require license</div>
+											</th>
+									</tr>
+									</tbody>
+									</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dojoxGridMasterView dojoxGridFixedRowHeight" role="presentation">
+							<div style="width: 1397px; height: 76px; left: 1px; top: 0px;" widgetid="dojox_grid__View_3" id="dojox_grid__View_3" class="dojoxGridView" role="presentation">
+
+								<!--<input class="dojoxGridHiddenFocus" dojoattachpoint="hiddenFocusNode" role="presentation" type="checkbox">
+								<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">		-->
+								<div style="height: 76px;" class="dojoxGridScrollbox" role="presentation">
+									<div style="height: 25px; width: 1397px;" class="dojoxGridContent" hidefocus="hidefocus" role="presentation">
+										<div style="position: absolute; left: 0px; top: 0px;" role="presentation">
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow">
+												<table style="width: 1397px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+													<tbody>
+														<tr>
+														<td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="0" style="width:15%;">DMO service</td>
+														<td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="1" style="width:10%;">Stopped</td>
+														<td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="2" style="width:20%;">
+															<a href="javascript:md_startService(&quot;dmo&quot;)">start </a>
+															<a href="javascript:md_showLicenseDialog(&quot;dmo&quot;, false)">license </a>
+														</td>
+														<td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="3" style="width:30%;">Data In Motion Service</td>
+														<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:10%;">1.0</td>
+														<td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:15%;">yes</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dojoxGridMasterMessages" style="display: none;"></div>
+						<span tabindex="0"></span>
+					</div>
+				</div>
+				<span widgetid="md_refreshContainerGridButton" class="dijit dijitReset dijitInline xwtButtonBorder xwtButton xwt-TextButton">
+				<span class="dijitReset dijitInline xwt-TextButtonNode" >
+					<span id="md_refreshContainerGridButton" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="md_refreshContainerGridButton_label">
+					<span class="dijitReset dijitInline dijitIcon dijitNoIcon"></span><span class="dijitReset dijitToggleButtonIconChar">?</span>
+				<span class="dijitReset dijitInline xwt-TextButtonText" id="md_refreshContainerGridButton_label">Refresh</span></span></span>
+				<input value="" class="dijitOffScreen" tabindex="-1"  type="button"></span>
+				<!--<button type="button" class="refresbutton">Refresh</button>-->
+
+
+
+
+				</div>
+			<!----------------------->
+
+			<!-------------VM tab --------->
+			<div style="left: 0px; top: 0px; width: 1398px; height: 1155px;" widgetid="xwt_widget_layout_TabContentPane_0" id="xwt_widget_layout_TabContentPane_0" role="group" title="" class="tabContentPane dijitTabPane dijitTabContainerTop-child dijitTabContainerTop-tabContentPane dijitVisible" >
+				<div id="vmInsideContainer" style="overflow: auto; left: 10px; top: 10px; width: 1398px; height: 1155px;" class="containerNode tabContentPaneSingleChild" >
+					<div style="width: 1398px; height: 1155px;" widgetid="xwt_widget_layout_XwtTabContainer_0" id="xwt_widget_layout_XwtTabContainer_0" role="tabpanel" class="dijitTabContainer dijitTabContainerTop dijitContainer dijitLayoutContainer tabStrip-disabled">
+						<div _dijitmenuxwt_widget_layout_xwttabcontainer_0_tablist_menu="1" widgetid="xwt_widget_layout_XwtTabContainer_0_tablist" id="xwt_widget_layout_XwtTabContainer_0_tablist" class="dijitTabListContainer-top xwtScrollingTabController dijitTabController tabStrip-disabled dijitAlignTop dijitLayoutContainer" style="visibility: visible; left: 0px; top: 0px; position: absolute; width: 1398px; height: 24px;">
+							<div style="-moz-user-select: none; display: none; left: 0px; top: 0px; position: absolute; height: 20px;" widgetid="dijit_layout__ScrollingTabControllerButton_3" id="dijit_layout__ScrollingTabControllerButton_3" tabindex="0"  class="dijitTabInnerDiv dijitTabContent dijitButtonContents dijitTab tabStripButton tabStripSlideButtonLeft dijitAlignLeft dijitTabBtnDisabled" >
+								<img role="presentation" alt="" src="blank.gif" class="dijitTabStripIcon xwtTabStripSlideButtonLeft" data-dojo-attach-point="iconNode">
+								<span title="?"  class="dijitButtonText dijitDisplayNone">?</span>
+							</div>
+							<div style="height: 24px; left: 2px; top: 0px; position: absolute; width: 1234px;" class="dijitTabListWrapper dijitTabContainerTopNone dijitAlignClient" >
+								<div style="width: 50000px;" wairole="tablist" class="dijitTabContainerTop-tabs">
+									<div id ="vmConfigJade"  onclick="changeVmTab(0)" widgetid="xwt_widget_layout_XwtTabContainer_0_tablist_xwt_widget_layout_TabContentPane_1" class="dijitTab dijitTabChecked dijitChecked" wairole="presentation" >
+										<div wairole="presentation" class="dijitTabInnerDiv" >
+											<div checked="" aria-selected="true" style="-moz-user-select: none;" title="Configuration" aria-disabled="false" id="xwt_widget_layout_XwtTabContainer_0_tablist_xwt_widget_layout_TabContentPane_1" tabindex="0" role="tab" wairole="presentation" class="dijitTabContent" >
+												<img class="dijitNoIcon" src="blank.gif" alt="" wairole="presentation">
+												<span style="-moz-user-select: none;" class="tabLabel">Configuration</span>
+												<span style="display: none;" title="Close" class="dijitInline dijitTabCloseButton dijitTabCloseIcon"  role="presentation">
+													<span class="dijitTabCloseText">x</span>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div id ="vmShowLogsJade" onclick="changeVmTab(1)" widgetid="xwt_widget_layout_XwtTabContainer_0_tablist_xwt_widget_layout_TabContentPane_2" class="dijitTab" wairole="presentation" >
+										<div wairole="presentation" class="dijitTabInnerDiv" >
+											<div aria-selected="false" style="-moz-user-select: none;" title="Show Logs" aria-disabled="false" id="xwt_widget_layout_XwtTabContainer_0_tablist_xwt_widget_layout_TabContentPane_2" tabindex="-1" role="tab" wairole="presentation" class="dijitTabContent" >
+											<img class="dijitNoIcon" src="blank.gif" alt="" wairole="presentation">
+											<span style="-moz-user-select: none;" class="tabLabel">Show Logs</span>
+											<span style="display: none;" title="Close" class="dijitInline dijitTabCloseButton dijitTabCloseIcon" role="presentation">
+													<span class="dijitTabCloseText">x</span>
+											</span>
+											</div>
+										</div>
+									</div>
+									<div id ="vmAboutJade"  onclick= "changeVmTab(2)" widgetid="xwt_widget_layout_XwtTabContainer_0_tablist_xwt_widget_layout_TabContentPane_3" class="dijitTab" wairole="presentation" >
+									<div wairole="presentation" class="dijitTabInnerDiv" >
+										<div aria-selected="false" style="-moz-user-select: none;" title="About" aria-disabled="false" id="xwt_widget_layout_XwtTabContainer_0_tablist_xwt_widget_layout_TabContentPane_3" tabindex="-1" role="tab" wairole="presentation" class="dijitTabContent" >
+										<img class="dijitNoIcon" src="blank.gif" alt="" wairole="presentation">
+										<span style="-moz-user-select: none;" class="tabLabel">About</span>
+										<span style="display: none;" title="Close" class="dijitInline dijitTabCloseButton dijitTabCloseIcon"  role="presentation">
+												<span class="dijitTabCloseText">x</span>
+										</span>
+										</div>
+									</div>
+								</div>
+								</div>
+							</div>
+							<div style="-moz-user-select: none; display: none; left: 1236px; top: 0px; position: absolute; height: 20px;" widgetid="dijit_layout__ScrollingTabControllerButton_4" id="dijit_layout__ScrollingTabControllerButton_4" tabindex="0" class="dijitTabInnerDiv dijitTabContent dijitButtonContents dijitTab tabStripButton tabStripSlideButtonRight dijitAlignRight dijitTabBtnDisabled" >
+								<img role="presentation" alt="" src="blank.gif" class="dijitTabStripIcon xwtTabStripSlideButtonRight" >
+								<span title="?"  class="dijitButtonText dijitDisplayNone">?</span>
+							</div>
+							<div widgetid="dijit_layout__ScrollingTabControllerButton_5" style="display: none; -moz-user-select: none; left: 1240px; top: 0px; position: absolute; height: 20px;" id="dijit_layout__ScrollingTabControllerButton_5" tabindex="0" class="dijitTabInnerDiv dijitTabContent dijitButtonContents dijitTab tabStripButton tabStripMenuButton dijitAlignRight" >
+								<img role="presentation" alt="" src="blank.gif" class="dijitTabStripIcon xwtTabStripMenuButton" >
+								<span title="?" class="dijitButtonText dijitDisplayNone">?</span>
+							</div>
+							<div widgetid="xwt_widget_layout__ToolbarButton_1" style="width: 150px; left: 1242px; top: 0px; position: absolute; height: 20px;" id="xwt_widget_layout__ToolbarButton_1" class="tabStripButton xwtDijitTabToolbar pageHeader dijitAlignRight">
+							</div>
+						</div>
+						<div style="left: 0px; top: 24px; position: absolute; width: 1398px;" class="dijitTabSpacer dijitTabContainerTop-spacer dijitAlignTop"></div>
+						<div style="left: 0px; top: 24px; position: absolute; width: 1397px; height: 1130px;" aria-labelledby="xwt_widget_layout_XwtTabContainer_0_tablist_xwt_widget_layout_TabContentPane_1" class="dijitTabPaneWrapper dijitTabContainerTop-container dijitAlignClient" >
+							<div id="xwt_widget_layout_TabContentPane_1" style="left: 0px; top: 0px; width: 1377px; height: 1110px;" widgetid="xwt_widget_layout_TabContentPane_1"  role="group" title="" class="tabContentPane noGradient dijitTabPane dijitTabContainerTop-child dijitTabContainerTop-tabContentPane dijitVisible" >
+								<div style="overflow: auto; left: 10px; top: 10px; width: 1377px; height: 1110px;" class="containerNode tabContentPaneSingleChild" >
+									<div widgetid="dijit_layout_ContentPane_1" id="dijit_layout_ContentPane_1" role="group" class="dijitContentPane" title="" style="height: 1080px; margin: 15px; width: 1347px;">
+										<table cellspacing="0">
+										<tbody>
+											<tr>
+											<td>
+												<textarea id="cn_config_jeff3apps" rows="30" cols="80" style="margin-bottom:15px;"></textarea>
+											</td>
+											</tr>
+											<tr>
+												<td>
+													<span widgetid="xwt_widget_form_TextButton_6" class="dijit dijitReset dijitInline xwtButtonBorder1 xwtButton xwt-TextButton">
+														<span class="dijitReset dijitInline xwt-TextButtonNode" >
+															<span id="xwt_widget_form_TextButton_6" tabindex="0" class="dijitReset dijitStretch xwt-TextButtonContents"  role="button" aria-labelledby="xwt_widget_form_TextButton_6_label">
+																<span class="dijitReset dijitInline dijitIcon dijitNoIcon" ></span>
+																<span class="dijitReset dijitToggleButtonIconChar">?</span>
+																<span class="dijitReset dijitInline xwt-TextButtonText" id="xwt_widget_form_TextButton_6_label" >Save</span>
+															</span>
+														</span>
+														<input value="" class="dijitOffScreen" tabindex="-1"  type="button">
+													</span>
+												</td>
+											</tr>
+										</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="xwt_widget_layout_TabContentPane_2" style="left: 0px; top: 0px; width: 1377px; height: 1110px;" widgetid="xwt_widget_layout_TabContentPane_2"  role="group" title="" class="tabContentPane noGradient dijitTabPane dijitTabContainerTop-child dijitTabContainerTop-tabContentPane dijitHidden" >
+								<div style="overflow: auto; left: 10px; top: 10px; width: 1377px; height: 1110px;" class="containerNode tabContentPaneSingleChild" >
+									<div widgetid="dijit_layout_ContentPane_2" id="dijit_layout_ContentPane_2" role="group" class="dijitContentPane" title="" style="height: 1080px; margin: 15px; width: 1347px;">
+										<span id="cn_log_jeff3apps" style="margin:15px">
+											<div style="height: auto;" aria-readonly="true" widgetid="grid_66538456" id="grid_66538456" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" dojoattachevent="onmouseout:_mouseOut" align="left">
+													<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" role="presentation">
+														<div style="width: 1346px; left: 1px; top: 0px;" class="dojoxGridHeader" role="presentation">
+															<div dojoattachpoint="headerNodeContainer" style="width:9000em" role="presentation">
+																<div dojoattachpoint="headerContentNode" role="row">
+																	<table style="width: 1346px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0">
+																		<tbody>
+																			<tr>
+																				<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_66538456Hdr0" class="dojoxGridCell dojoDndItem " idx="0" style="width:auto;" dndtype="gridColumn_grid_66538456">
+																					<div class="dojoxGridSortNode">Log name</div></th>
+																				<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_66538456Hdr1" class="dojoxGridCell dojoDndItem " idx="1" style="width:auto;" dndtype="gridColumn_grid_66538456">
+																					<div class="dojoxGridSortNode">Timestamp</div></th>
+																				<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_66538456Hdr2" class="dojoxGridCell dojoDndItem " idx="2" style="width:auto;" dndtype="gridColumn_grid_66538456">
+																					<div class="dojoxGridSortNode">Log Size</div></th>
+																					<th tabindex="-1" aria-readonly="true" role="columnheader" id="grid_66538456Hdr3" class="dojoxGridCell dojoDndItem " idx="3" style="width:auto;" dndtype="gridColumn_grid_66538456">
+																						<div class="dojoxGridSortNode">Download</div></th>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div style="height: 1px;" class="dojoxGridMasterView"  role="presentation">
+														<div style="width: 1346px; left: 1px; top: 0px;" widgetid="dojox_grid__View_19" id="dojox_grid__View_19" class="dojoxGridView" role="presentation">
+
+															<input class="dojoxGridHiddenFocus"  role="presentation" type="checkbox">
+															<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">
+															<div class="dojoxGridScrollbox"  role="presentation">
+																<div style="height: 1px; width: 1346px;" class="dojoxGridContent" hidefocus="hidefocus" role="presentation"></div>
+															</div>
+														</div>
+													</div>
+													<div class="dojoxGridMasterMessages" style="display: none;"></div>
+													<span tabindex="0"></span>
+											</div>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div id="xwt_widget_layout_TabContentPane_3" style="left: 0px; top: 0px; width: 1377px; height: 1110px;" widgetid="xwt_widget_layout_TabContentPane_3" role="group" title="" class="tabContentPane noGradient dijitTabPane dijitTabContainerTop-child dijitTabContainerTop-tabContentPane dijitHidden">
+								<div style="overflow: auto; left: 10px; top: 10px; width: 1377px; height: 1110px;" class="containerNode tabContentPaneSingleChild" >
+									<div widgetid="dijit_layout_ContentPane_3" id="dijit_layout_ContentPane_3" role="group" class="dijitContentPane" title="" style="height: 1080px; margin: 15px; width: 1347px;">
+										<span id="cn_about_jeff3apps" style="margin:15px">
+											<div class="widget_table">
+												<table style="margin-bottom: 1em; color: #686868; font-size: 12px; line-height: 18px;" border="0" cellpadding="5" cellspacing="5" width="40%">
+												<tbody>
+												<tr class="roweven">
+													<td>ID:</td>
+													<td>jeff3apps</td>
+												</tr>
+												<tr>
+													<td>Name:</td>
+													<td>PtTestApp</td>
+												</tr>
+												<tr class="roweven">
+													<td>Version:</td>
+													<td>1.1.1</td>
+												</tr>
+												<tr>
+													<td>Author:</td>
+													<td>Pacekt Tracer 7.0</td>
+												</tr>
+												<tr class="roweven">
+													<td>Author link:</td>
+													<td>http://www.cisco.com/packet_tracer</td>
+												</tr>
+												<tr>
+													<td>Application type:</td>
+													<td>vm</td>
+												</tr>
+												<tr>
+													<td>Description:</td>
+													<td>Testing from Jaff with 3 apps</td>
+												</tr>
+												<tr class="roweven">
+													<td></td>
+													<td></td>
+												</tr>
+												</tbody>
+												</table>
+											</div>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-------------VM tab end----------------->
+
+	</div>
+	</div>
+	</div>
+	</div>
+
+	<!---deploy popup menu goes here---------------------------->
+	<div id="cn_deployContainerDialog" style="position: absolute; opacity: 0; top: 147px; left: 508px; z-index: 1010; display: none;" widgetid="cn_deployContainerDialog" role="group" title="" class="xwtDialog dijitDialog" tabindex="0" wairole="dialog" waistate="labelledby-cn_deployContainerDialog_title">
+		<div wairole="presentation" class="containerTable">
+			<div wairole="presentation" class="middle-center" >
+				<div title="Deploy application" class="dijitDialogTitleBar">
+					<span class="dijitDialogTitle" id="cn_deployContainerDialog_title">Deploy application</span>
+					<span tabindex="0" class="dijitDialogCloseIcon" onclick = "closeAddDeployWindow()" title="Cancel">
+					<span class="closeText" title="Cancel">x</span>
+					</span>
+				</div>
+				<div wairole="presentation" class="dijitDialogPaneContent xwtDialog dijitDialogSingleChild">
+					<div widgetid="xwt_sample_cn_UploadDialogContent_0" id="xwt_sample_cn_UploadDialogContent_0" role="group" title="" class="dialogContent dijitContentPane dijitContentPaneSingleChild" style="overflow: hidden;">
+						<form style="width: 384px; height: 54px;" widgetid="cn_deployContainerForm" id="cn_deployContainerForm" method="POST" action="upload_vm" enctype="multipart/form-data">
+							<table cellspacing="0">
+							<tbody>
+							<tr>
+								<td class="dialogContentLabel">
+								<label for="X-Connector-Id" style="padding-right:8px;">Application Id:</label></td>
+								<td>
+									<input name="X-Token-Id" id="X-Token-Id" value="" type="hidden">
+									<div widgetid="X-Connector-Id" style="margin-bottom: 5px;" class="dijit dijitReset dijitInline dijitLeft dialogInputElement dijitTextBox" id="widget_X-Connector-Id" role="presentation">
+										<div class="dijitReset dijitInputField dijitInputContainer">
+											<input value="" id="X-Connector-Id" maxlength="64" tabindex="0" class="dijitReset dijitInputInner" autocomplete="off" name="X-Connector-Id" type="text">
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="dialogContentLabel">
+								<label  style="padding-right:8px;">Select Application Archive</label></td>
+								<td>
+									<input class="dialogInputElement" style="margin-bottom:5px;" name="selectedFile" id="selectedFile" value="" label="Browse" type="file">
+								</td>
+							</tr>
+							</tbody>
+							</table>
+						</form>
+					</div>
+				</div>
+				<div wairole="presentation" class="buttonPane" >
+					<div widgetid="xwt_widget_form_TextButtonGroup_0" id="xwt_widget_form_TextButtonGroup_0" class="dijit xwtTextButtonGroup" role="toolbar" tabindex="0" >
+						<span tabindex="0" widgetid="xwt_widget_form_TextButton_0" class="dijit dijitReset dijitInline xwtButtonBorder xwtButton defaultButton">
+							<span class="dijitReset dijitInline xwt-TextButtonNode" onclick="cn_deployContainer()">
+								<span id="Span1" tabindex="-1" class="dijitReset dijitStretch xwt-TextButtonContents">
+									<span class="dijitReset dijitInline xwt-TextButtonText" id="Span2">OK</span>
+								</span>
+							</span>
+							<input value="" class="dijitOffScreen" tabindex="-1"  type="button">
+						</span>
+						<span tabindex="0" widgetid="xwt_widget_form_TextButton_1" class="dijit dijitReset dijitInline xwtButtonBorder xwtButton xwt-TextButton">
+							<span class="dijitReset dijitInline xwt-TextButtonNode" onclick = "closeAddDeployWindow()">
+								<span id="Span3" tabindex="-1" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="xwt_widget_form_TextButton_1_label">
+									<span class="dijitReset dijitInline dijitIcon dijitNoIcon" ></span>
+									<span class="dijitReset dijitToggleButtonIconChar">?</span>
+									<span class="dijitReset dijitInline xwt-TextButtonText" id="Span4" >Cancel</span>
+								</span>
+							</span>
+							<input value="" class="dijitOffScreen" tabindex="-1" data-dojo-attach-point="valueNode" type="button">
+						</span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!---deploy finishes here ----------------------------------->
+
+	<!-------browse table goes here------------------------------>
+	<div id="uploadfile" style="position: absolute; opacity: 0; top: 147px; left: 508px; z-index: 1010; width: 550px; height: 360px;  display: none;" widgetid="cn_uploadFileDialog" role="group" title="" class="xwtDialog dijitDialog" tabindex="0" wairole="dialog" waistate="labelledby-cn_uplaodFileDialog_title">
+		<div wairole="presentation" class="containerTable">
+			<div wairole="presentation" class="middle-center" >
+				<div title="Upload File" class="dijitDialogTitleBar">
+					<span class="dijitDialogTitle" id="Span5">Upload File</span>
+					<span tabindex="0" class="dijitDialogCloseIcon"  onclick="closeFileBrowser()" title="Cancel">
+					<span class="closeText"  title="Cancel">x</span>
+					</span>
+				</div>
+				<div wairole="presentation" class="dijitDialogPaneContentFileUpload xwtDialog dijitDialogSingleChild" style= "width : 528px; height : 300px;">
+					<div widgetid="xwt_sample_cn_UploadDialogContent_0" id="FileUploadDiv4" role="group"  title="" class="dialogContent dijitContentPane dijitContentPaneSingleChild" style="overflow: hidden;" >
+						<form style="width: 384px; height: 54px;" widgetid="cn_uploadFileForm" id="uploadFileForm1" method="POST" action="" enctype="multipart/form-data">
+							<table cellspacing="15" >
+							<tbody>
+							<tr>
+								<!--<td class="dialogContentLabel"> <label for="X-Connector-Id" style="padding-right:8px;">Application Id:</label></td>
+								<td>
+									<input name="X-Token-Id" id="Hidden1" value="" type="hidden">
+									<div widgetid="X-Connector-Id" style="margin-bottom: 5px;" class="dijit dijitReset dijitInline dijitLeft dialogInputElement dijitTextBox" id="Div5" role="presentation">
+										<div class="dijitReset dijitInputField dijitInputContainer">
+											<input value="" id="Text1" maxlength="64" tabindex="0" class="dijitReset dijitInputInner" autocomplete="off" name="X-Connector-Id" type="text">
+										</div>
+									</div>
+								</td>   -->
+							</tr>
+							<tr>
+								<!--<td class="dialogContentLabel"><label for="browseButton" style="padding-right:8px;">Select Application Archive</label></td>
+								<td>
+									<button id = "Button1" type="button" onclick= "openFileBrowser()" class="Browse">Browse..</button>
+
+								</td>
+								<td>
+								<div id= "Div6" style="padding-right:8px;"  class="middle-center"> No file selected </div>
+								</td>  -->
+							</tr>
+							</tbody>
+							</table>
+						</form>
+					</div>
+				</div>
+				<div wairole="presentation" class="buttonPane" >
+					<div widgetid="xwt_widget_form_TextButtonGroup_0" id="Div7" class="dijit xwtTextButtonGroup" role="toolbar" tabindex="0" >
+						<span tabindex="0" widgetid="xwt_widget_form_TextButton_0" class="dijit dijitReset dijitInline xwtButtonBorder xwtButton defaultButton">
+							<span class="dijitReset dijitInline xwt-TextButtonNode" >
+								<span id="Span6" tabindex="-1" class="dijitReset dijitStretch xwt-TextButtonContents"  role="button" aria-labelledby="xwt_widget_form_TextButton_0_label">
+									<span class="dijitReset dijitInline dijitIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+									<span class="dijitReset dijitToggleButtonIconChar">?</span>
+									<span class="dijitReset dijitInline xwt-TextButtonText" id="Span7" >Open</span>
+								</span>
+							</span>
+							<input value="" class="dijitOffScreen" tabindex="-1"  type="button">
+						</span>
+						<span tabindex="0" widgetid="xwt_widget_form_TextButton_1" class="dijit dijitReset dijitInline xwtButtonBorder xwtButton xwt-TextButton">
+							<span class="dijitReset dijitInline xwt-TextButtonNode" onclick = "closeFileBrowser()">
+								<span id="Span8" tabindex="-1" class="dijitReset dijitStretch xwt-TextButtonContents" role="button" aria-labelledby="xwt_widget_form_TextButton_1_label">
+									<span class="dijitReset dijitInline dijitIcon dijitNoIcon" ></span>
+									<span class="dijitReset dijitToggleButtonIconChar">?</span>
+									<span class="dijitReset dijitInline xwt-TextButtonText" id="Span9" >Cancel</span>
+								</span>
+							</span>
+							<input value="" class="dijitOffScreen" tabindex="-1" data-dojo-attach-point="valueNode" type="button">
+						</span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!----browse table ends here --------------------------------->
+<div widgetid="processesDialog" id="processesDialog" style="width: 700px; height: 520px; position: absolute; left: 360px; top: 133px; opacity: 1; z-index: 950;  display: none;" title="" class="dijitDialog dijitDialogHover dijitHover" role="dialog" aria-labelledby="processesDialog_title">
+	<div title="Currently running processes" data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+		<span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="processesDialog_title" role="heading" level="1">Currently running processes</span>
+		<span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="ondijitclick: onCancel" title="Cancel" role="button" tabindex="-1">
+			<span data-dojo-attach-point="closeText" class="closeText" title="Cancel">x</span>
+		</span>
+	</div>
+	<div style="width: auto; height: auto; overflow: auto; position: relative;" data-dojo-attach-point="containerNode" class="dijitDialogPaneContent"><table border="0" width="100%">         
+		<tbody>
+			<tr style="height:20px">         </tr>
+			<tr align="center">
+				<td>
+					<div aria-activedescendant="proc_containerGridDivHdr0" style="height: 420px; -moz-user-select: none;" aria-readonly="true" widgetid="proc_containerGridDiv" id="proc_containerGridDiv" class="dojoxGrid" aria-multiselectable="true" tabindex="0" hidefocus="hidefocus" role="grid" dojoattachevent="onmouseout:_mouseOut" align="left">
+						<div style="display: block; height: 24px;" class="dojoxGridMasterHeader" dojoattachpoint="viewsHeaderNode" role="presentation">
+							<div style="width: 695px; left: 1px; top: 0px;" class="dojoxGridHeader" dojoattachpoint="headerNode" role="presentation">
+								<div dojoattachpoint="headerNodeContainer" style="width: 107983px;" role="presentation">
+									<div dojoattachpoint="headerContentNode" role="row"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr0" class="dojoxGridCell dojoDndItem  dojoxGridCellFocus" idx="0" style="width:7%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">PID</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr1" class="dojoxGridCell dojoDndItem" idx="1" style="width:7%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">PPID</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr2" class="dojoxGridCell dojoDndItem" idx="2" style="width:7%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">USER</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr3" class="dojoxGridCell dojoDndItem" idx="3" style="width:5%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">NI</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr4" class="dojoxGridCell dojoDndItem" idx="4" style="width:9%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">VIRT</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr5" class="dojoxGridCell dojoDndItem" idx="5" style="width:9%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">RES</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr6" class="dojoxGridCell dojoDndItem" idx="6" style="width:5%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">CPU%</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr7" class="dojoxGridCell dojoDndItem " idx="7" style="width:5%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">MEM%</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr8" class="dojoxGridCell dojoDndItem " idx="8" style="width:9%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">TIME+</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr9" class="dojoxGridCell dojoDndItem" idx="9" style="width:12%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">NAME</div></th><th tabindex="-1" aria-readonly="true" role="columnheader" id="proc_containerGridDivHdr10" class="dojoxGridCell dojoDndItem" idx="10" style="width:16%;" dndtype="gridColumn_proc_containerGridDiv">
+									<div class="dojoxGridSortNode">CMD</div></th></tr></tbody></table></div>
+								</div>
+							</div>
+						</div>
+						<div class="dojoxGridMasterView dojoxGridFixedRowHeight" dojoattachpoint="viewsNode" role="presentation">
+							<div style="width: 695px; height: 396px; left: 1px; top: 0px;" widgetid="dojox_grid__View_17" id="dojox_grid__View_17" class="dojoxGridView" role="presentation">
+
+								<input class="dojoxGridHiddenFocus" dojoattachpoint="hiddenFocusNode" role="presentation" type="checkbox">
+								<input class="dojoxGridHiddenFocus" role="presentation" type="checkbox">
+								<div style="height: 396px;" class="dojoxGridScrollbox" dojoattachpoint="scrollboxNode" role="presentation">
+									<div style="height: 1425px; width: 678px;" class="dojoxGridContent" dojoattachpoint="contentNode" hidefocus="hidefocus" role="presentation">
+										<div style="position: absolute; left: 0px; top: 0px;" role="presentation">
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">1415</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">1414</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">4.9M</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">1.6M</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="6" style="width:5%;">0.9</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0.3</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="8" style="width:9%;">0:14.33</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">slqssdk</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;">./slqssdk 0</td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">1308</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">1</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">13.8M</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">1.6M</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="6" style="width:5%;">0.5</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0.3</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">5:30.37</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">monit</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;">/bin/monit -c /etc/monitrc</td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOver"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">1414</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">1</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">46.3M</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">1.4M</td><td tabindex="-1" role="gridcell" class="dojoxGridCell dojoxGridCellOver" idx="6" style="width:5%;">0.2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0.3</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">14:01.67</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">cwan_shim</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;">cwan_shim</td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="0" style="width:7%;">1354</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">1</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">127.7M</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">18.6M</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="6" style="width:5%;">0.1</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">3.7</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="8" style="width:9%;">5:27.56</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">python</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;">python scripts/startup.pyc config/system-config.ini config/log-config.ini</td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">1</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">3.8M</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">804.0K</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0.2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:05.93</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">init</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;">init</td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="0" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">kthreadd</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">3</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.36</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">ksoftirqd/0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">4</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">kworker/0:0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">5</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.70</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">kworker/u:0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">6</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="8" style="width:9%;">3:25.94</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">rcu_kthread</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">7</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">-20</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">cpuset</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">8</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">-20</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">khelper</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">9</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">kworker/u:1</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">152</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:07.82</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">sync_supers</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">154</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="8" style="width:9%;">0:00.90</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">bdi-default</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="0" style="width:7%;">155</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">-20</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="9" style="width:12%;">kblockd</td><td tabindex="-1" role="gridcell" class="dojoxGridCell" idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">162</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">-20</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">ata_sff</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">174</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.10</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">khubd</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">179</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">-20</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">md</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">266</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">-20</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">rpciod</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">267</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">2:34.95</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">kworker/0:1</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">282</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">kswapd0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">351</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">fsnotify_mark</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow dojoxGridRowOdd"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">360</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">-20</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">nfsiod</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="10" style="width:16%;"></td></tr></tbody></table></div>
+											<div style="" aria-selected="false" role="row" class="dojoxGridRow"><table style="width: 678px; height: 25px;" class="dojoxGridRowTable" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="0" style="width:7%;">375</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="1" style="width:7%;">2</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="2" style="width:7%;">root</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="3" style="width:5%;">-20</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="4" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="5" style="width:9%;">0B</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="6" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="7" style="width:5%;">0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="8" style="width:9%;">0:00.0</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="9" style="width:12%;">xfs_mru_cache</td><td tabindex="-1" role="gridcell" class="dojoxGridCell " idx="10" style="width:16%;"></td></tr></tbody></table></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dojoxGridMasterMessages" style="display: none;" ></div>
+						<span  tabindex="0"></span>
+					</div>
+				</td>
+			</tr>         
+			<tr align="right">
+				<td>
+				<span widgetid="myButton" class="dijit dijitReset dijitInline dijitButton" role="presentation">
+				<span class="dijitReset dijitInline dijitButtonNode" data-dojo-attach-event="ondijitclick:_onClick" role="presentation">
+				<span style="-moz-user-select: none;" id="myButton" tabindex="0" class="dijitReset dijitStretch dijitButtonContents" role="button" aria-labelledby="myButton_label">
+				<span class="dijitReset dijitInline dijitIcon dijitNoIcon" data-dojo-attach-point="iconNode"></span>
+				<span class="dijitReset dijitToggleButtonIconChar">?</span>
+				<span class="dijitReset dijitInline dijitButtonText" onclick="closeInspect()" id="myButton_label">Close</span>
+				</span>
+				</span>
+				<input value="" class="dijitOffScreen" tabindex="-1" role="presentation"  type="button"></span>
+				</td>
+			</tr>         
+		</tbody></table>
+	</div>
+</div>	
+
+	<div id='progressDialog' class='progressBarDialog dijitDialog' widgetid='progressDialog' style='outline: medium none; position: absolute; opacity: 0; left: 35%; top: 35%; z-index: 9011; display: none;' title='' role='dialog' aria-labelledby='progressDialog_title'>
+		<div class='dijitDialogTitleBar'>
+			<span class='dijitDialogTitle' id='progressDialog_title' role='heading' level='1'></span>
+			<span class='dijitDialogCloseIcon' title='Cancel' role='button' tabindex='-1'>
+				<span class='closeText' title='Cancel'>x</span>
+			</span>
+		</div>
+		<div class='dijitDialogPaneContent dijitDialogSingleChild'>
+			<div id='dijit_layout_ContentPane_0' class='dijitContentPane' widgetid='dijit_layout_ContentPane_0' role='group' title='' style='width: 311px; height: 128px; overflow: hidden;'>
+				<div id='intProgress' class='xwtProgressBar xwtProgressBackground dijitProgressBarIndeterminate' widgetid='intProgress' aria-valuemax='20' aria-valuemin='0' aria-describedby='intProgress_label'>
+					<div class='progressBarLogo'></div>
+					<span class='processText'>Operation in progress, this can take some time.<br>Please wait and do not reload the browser...</span>
+					<div class='dijitProgressBar dijitProgressBarEmpty'>
+						<div class='dijitProgressBarFull'style='width: 100%;' wairole='progressbar'>
+							<div class='dijitProgressBarTile'></div>
+							<span style='visibility:hidden'>&nbsp;</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div style='top: 0px; left: 0px; z-index: 9010; display: none;' widgetid='dijit_DialogUnderlay_0' id='dijit_DialogUnderlay_0' class='dijitDialogUnderlayWrapper'>
+		<div style='width: 1920px; height: 572px;' id='xwt_widget_notification_Alert_9_underlay' class='dijitDialogUnderlay _underlay'></div>
+	</div>
+
+	<?=VM-ErrOr-goes-here=?>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+#!/bin/bash
+
+# Thanks to Felix Wolf (felix@bar.bz) for providing this install script.
+# Thanks to Paul Fedele for providing script to check/download 32-bit library on a 64-bit machine
+initInstall ()
+{
+echo
+echo Welcome to Cisco Packet Tracer 7.0 Installation
+echo
+echo Read the following End User License Agreement \"EULA\" carefully. You must accept the terms of this EULA to install and use Cisco Packet Tracer.
+echo "Press the Enter key to read the EULA."
+echo
+read cont
+more eula.txt
+echo "Do you accept the terms of the EULA? (Y)es/(N)o"
+echo
+read input	
+case "$input" in
+yes|YES|Yes|Y|y)
+(installer);;
+esac
+exit 0
+}
+
+installer ()
+{
+SDIR=`dirname $_`
+ARCHITECTURE=$(uname -m)
+INSTALL_32BIT_LIBRARY=false
+
+echo "You have accepted the terms to the EULA. Congratulations. Packet Tracer will now be installed."
+read -p "Enter location to install Cisco Packet Tracer or press enter for default [/opt/pt]: " IDIR
+
+if [ -z $IDIR ]; then
+	IDIR="/opt/pt"
+fi
+
+if [ $ARCHITECTURE != "x86_64" ]; then	
+	echo "Packet Tracer must be installed on a 64-bit OS."; exit 0
+fi
+
+if [ -e $IDIR ]; then
+	read -p "It appears that Packet Tracer is already installed.  Do you wish to replace it? [Yn] " NEEDREPLACE
+	if [ "$NEEDREPLACE" = "y" ] || [ "$NEEDREPLACE" = "Y" ] || [ -z $NEEDREPLACE ]; then
+		sudo rm -rf $IDIR
+	else
+		echo "Program Terminated"; exit 0
+	fi
+fi
+
+QIDIR=${IDIR//\//\\\\\/}
+
+echo Installing into $IDIR
+
+if mkdir $IDIR > /dev/null 2>&1; then
+	if cp -r $SDIR/* $IDIR; then
+		echo Copied all files successfully to $IDIR
+	fi
+	
+	sh -c "sed s/III/$QIDIR/ $SDIR/tpl.packettracer > $IDIR/packettracer"
+	chmod a+x $IDIR/packettracer
+	sh -c "sed s/III/$QIDIR/ $SDIR/tpl.linguist > $IDIR/linguist"
+	chmod a+x $IDIR/linguist
+
+
+	if touch /usr/share/applications/pt7.desktop > /dev/null 2>&1; then
+		echo -e "[Desktop Entry]\nExec=PacketTracer7\nIcon=pt7\nType=Application\nTerminal=false\nName=Packet Tracer 7.0" | tee /usr/share/applications/pt7.desktop > /dev/null
+		rm -f /usr/share/icons/hicolor/48x48/apps/pt7.png
+		gtk-update-icon-cache -f -q /usr/share/icons/hicolor
+		sleep 10
+		cp $SDIR/art/app.png /usr/share/icons/hicolor/48x48/apps/pt7.png
+		gtk-update-icon-cache -f -q /usr/share/icons/hicolor
+	fi
+
+else
+	echo
+	echo Not able to create and copy files to $IDIR
+	read -p "Should we try to gain root access with sudo? [Yn] " QSD
+	if [ "$QSD" = "y" ] || [ "$QSD" = "Y" ] || [ -z $QSD ]; then
+		if sudo mkdir $IDIR; then
+			echo Installing into $IDIR
+			if sudo cp -r $SDIR/* $IDIR; then
+				echo Copied all files successfully to $IDIR
+			else
+				echo
+				echo Not able to copy files to $IDIR
+				echo Exiting installation
+				exit
+			fi
+			sudo sh -c "sed s/III/$QIDIR/ $SDIR/tpl.packettracer > $IDIR/packettracer"
+			sudo chmod a+x $IDIR/packettracer
+			sudo sh -c "sed s/III/$QIDIR/ $SDIR/tpl.linguist > $IDIR/linguist"
+			sudo chmod a+x $IDIR/linguist
+
+			if sudo touch /usr/share/applications/pt7.desktop; then
+				echo -e "[Desktop Entry]\nExec=PacketTracer7\nIcon=pt7\nType=Application\nTerminal=false\nName=Packet Tracer 7.0" | sudo tee /usr/share/applications/pt7.desktop > /dev/null
+				sudo rm -f /usr/share/icons/hicolor/48x48/apps/pt7.png
+				sudo gtk-update-icon-cache -f -q /usr/share/icons/hicolor
+				sleep 10
+				sudo cp $SDIR/art/app.png /usr/share/icons/hicolor/48x48/apps/pt7.png
+				sudo gtk-update-icon-cache -f -q /usr/share/icons/hicolor
+			fi
+
+		else
+			echo
+			echo Not able to gain root access with sudo
+			echo Exiting installation
+			exit
+		fi
+	else
+		echo
+		echo Exiting installation
+		exit
+	fi
+fi
+
+
+
+echo
+echo 
+read -p "Should we create a symbolic link \"packettracer\" in /usr/local/bin for easy Cisco Packet Tracer startup? [Yn] " QC
+if [ "$QC" = "y" ] || [ "$QC" = "Y" ] || [ -z $QC ]; then
+	if [ "$user" != "root" ]; then
+		sudo ln -sf $IDIR/packettracer /usr/local/bin
+	else 
+		ln -sf $IDIR/packettracer /usr/local/bin
+	fi
+	echo "Type \"packettracer\" in a terminal to start Cisco Packet Tracer"
+else
+	echo "Type \"$IDIR/packettracer\" in a terminal to start Cisco Packet Tracer"
+fi
+
+# add the environment var PT5HOME
+sudo sh set_ptenv.sh $IDIR
+
+echo
+echo Cisco Packet Tracer 7.0 installed successfully
+}
+initInstall
+exit 0
+
